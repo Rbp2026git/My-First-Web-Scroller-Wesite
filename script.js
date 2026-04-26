@@ -1,5 +1,5 @@
 let homeBtn = document.getElementById("homeBtn");
-let servicesBtn = document.getElementById("servicesBtn");
+let notesBtn = document.getElementById("notesBtn");
 let contactBtn = document.getElementById("contactBtn");
 let modeBtn = document.getElementById("modeBtn");
 
@@ -20,8 +20,8 @@ homeBtn.addEventListener("click", function(){
     scrollToSection("home");
 })
 
-servicesBtn.addEventListener("click", function(){
-    scrollToSection("services");
+notesBtn.addEventListener("click", function(){
+    scrollToSection("notes");
 })
 
 contactBtn.addEventListener("click", function(){

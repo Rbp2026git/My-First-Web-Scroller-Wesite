@@ -1,0 +1,106 @@
+/* Reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: #f4f4f4;
+    color: #333;
+    transition: 0.3s;
+}
+.dark{
+    background: #111;
+    color: #fff;
+}
+
+/*Navbar*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: #333;
+    color: #fff;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+}
+nav ul li{
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+/*Hero*/
+.hero{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #007bff;
+    /*background-color: linear-gradient(to right, #007bff, #00c6ff);*/
+    color:white;
+}
+.hero h1{
+    font-size: 3rem;
+}
+
+/*Services Section*/
+.notes{
+    padding: 50px;;
+    text-align: center;
+}
+.notes h2{
+    margin-bottom: 20px;
+}
+.cards{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card{
+    box-sizing: border-box;
+    background: white;
+    padding: 10px;
+    width: 250px;
+    height: 320px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+/*Contact Section*/
+.contact{
+    padding: 50px;
+    text-align: center;
+}
+input, textarea{
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#des{
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    
+}
+button{
+    padding: 10px 20px;
+    border: none;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+/*Responsive*/
+@media(max-width: 768px){
+    .cards{
+        flex-direction: column;
+        align-items: center;
+    }
+}
