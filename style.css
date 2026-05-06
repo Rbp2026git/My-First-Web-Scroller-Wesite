@@ -24,7 +24,7 @@ body{
 .logo{
     display: flex;
     justify-content: center;
-    align-items: centergit;
+    align-items: center;
 }
 .login-bar{
     display: grid;
