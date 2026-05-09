@@ -109,13 +109,27 @@ body{
     box-sizing: border-box;
     height: var(--nav-height);
     background-color: aqua;
-    display: flex;
-
+    display: grid;
+    grid-template-columns: 3fr 2fr;
 }
 .lowerNav-first ul{
+    width: 100%;
+    height: 100%;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
+}
+.lowerNav-first ul li{
+    box-sizing: border-box;
+    padding: 8px 16px;
+    border: 0.2px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.lowerNav-first ul li:hover{
+    border-color: black;
+    background-color: rgb(226, 221, 221);
 }
 
 /*Hero*/
