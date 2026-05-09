@@ -6,3 +6,4 @@
 <p>- Services Section</p>
 <p>- Contact Form (with validation)</p>
 <p>Dark Mode Toggle</p>
+<p>Author : Raushan Bhai Patel</p>
