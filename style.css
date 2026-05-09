@@ -109,6 +109,13 @@ body{
     box-sizing: border-box;
     height: var(--nav-height);
     background-color: aqua;
+    display: flex;
+
+}
+.lowerNav-first ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
 }
 
 /*Hero*/
