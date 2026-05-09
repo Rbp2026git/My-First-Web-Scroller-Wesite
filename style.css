@@ -1,4 +1,8 @@
 /* Reset*/
+:root{
+    --nav-height: 54px;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -16,22 +20,51 @@ body{
     color: #fff;
 }
 /*Header*/
+.header{
+    box-sizing: border-box;
+    padding: 4px;
+}
 .upperNav{
+    box-sizing: border-box;
+    height: var(--nav-height);
+    width: 100%;
     display: grid;
-    grid-template-columns: 1fr 6fr 1.4fr;
+    grid-template-columns: 1.5fr 5.2fr 1.7fr;
+    align-items: center;
 
 }
+.logo, .search, .login-bar{
+    height: var(--nav-height);
+    
+}
+/*Profile & Logo Section*/
 .logo{
+    box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
 }
+#profile{
+    box-sizing: border-box;
+    width: 50px;
+    height: 50px;
+    border: 0.5px solid black;
+    border-radius: 50%;
+    background-color: burlywood;
+}
+#vista{
+    box-sizing: border-box;
+    line-height: 1;
+}
+
 .search{
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .login-bar{
+    box-sizing: border-box;
     display: grid;
     grid-template-columns: 3fr 3fr 1fr;
     column-gap: 8px;
@@ -48,21 +81,11 @@ body{
     border-radius: 7px;
 }
 
-/*Navbar*/
-nav{
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 30px;
-    background: #333;
-    color: #fff;
-}
-nav ul {
-    display: flex;
-    list-style: none;
-}
-nav ul li{
-    margin-left: 20px;
-    cursor: pointer;
+/* Lower Nav in Header section */
+.lowerNav{
+    box-sizing: border-box;
+    height: var(--nav-height);
+    background-color: aqua;
 }
 
 /*Hero*/
