@@ -38,6 +38,21 @@ body{
     
 }
 /*Profile & Logo Section*/
+.menu-icon{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.menu-icon svg{
+    width: 32px;
+    height: 32px;
+
+    color: rgb(15, 15, 15); /* icon color */
+}
 .logo{
     box-sizing: border-box;
     display: flex;
@@ -130,6 +145,7 @@ body{
 .lowerNav-first ul li:hover{
     border-color: black;
     background-color: rgb(226, 221, 221);
+    cursor: pointer;
 }
 
 /*Hero*/
