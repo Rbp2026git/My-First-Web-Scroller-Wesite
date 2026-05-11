@@ -248,6 +248,10 @@ button{
     color: #ccc;
     cursor: pointer;
 }
+.social-footer-div a img{
+    height: 24px;
+    width: 24px;
+}
 .end-footer-div{
     display: block;
     line-height: 1.25rem;
