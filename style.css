@@ -222,7 +222,7 @@ button{
 
 /* Footer Section*/
 .footer{
-    padding: 96px;
+    padding: 36px;
     background: #333;
     color: #ccc;
 }
@@ -230,19 +230,25 @@ button{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
+    gap: 1rem;
 }
-
-.foot-container div h3{
+.footer-container-grid-box h3{
     height: 24px;
-    display: block;
+    text-align: center;
     color: white;
     margin-bottom: 1rem;
 }
+
 .main-footer-div, .learn-footer-div, .social-footer-div, .legal-footer-div, .support-footer-div{
     display: flex;
     flex-direction: column;
+    gap: 2px;
 }
 .main-footer-div a, .learn-footer-div a, .social-footer-div a, .legal-footer-div a, .support-footer-div a{   
+    /* text-align: center; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 24px;
     text-decoration: none;
     color: #ccc;
@@ -253,8 +259,7 @@ button{
     width: 24px;
 }
 .end-footer-div{
-    display: block;
     line-height: 1.25rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: center;
 }
