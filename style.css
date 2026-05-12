@@ -165,7 +165,7 @@ body{
     align-items: center;
     text-align: center;
     background: #007bff;
-    /*background-color: linear-gradient(to right, #007bff, #00c6ff);*/
+    /* background-color: linear-gradient(to right, #007bff, #00c6ff); */
     color:white;
 }
 .hero h1{
