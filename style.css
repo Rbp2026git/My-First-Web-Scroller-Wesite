@@ -63,9 +63,18 @@ body{
     box-sizing: border-box;
     width: 46px;
     height: 46px;
-    border: 0.5px solid black;
+    border: 0.55px solid black;
     border-radius: 50%;
-    background-color: burlywood;
+    background-color: burlywood; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#profile img{
+    height: 46px;
+    width: 46px;
+    display: block;
+    cursor: pointer;
 }
 #vista{
     box-sizing: border-box;
