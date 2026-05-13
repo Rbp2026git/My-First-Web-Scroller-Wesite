@@ -31,3 +31,23 @@ contactBtn.addEventListener("click", function(){
 modeBtn.addEventListener("click", function(){
     toggleDarkMode();
 })
+
+
+
+const slider = document.querySelector(".slider");
+
+let index = 0;
+
+function autoSlide(){
+
+    index++;
+
+    if(index > 2){
+        index = 0;
+    }
+
+    slider.style.transform = `translateX(-${index * 33.8}%)`;
+
+}
+
+setInterval(autoSlide, 3000);
