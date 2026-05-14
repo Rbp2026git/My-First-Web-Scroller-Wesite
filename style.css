@@ -169,7 +169,7 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* background-color: rgb(200, 240, 89); */
+    background-color: yellow;
     /* background-color: linear-gradient(to right, #007bff, #00c6ff); */
     color:white;
 }
@@ -179,10 +179,12 @@ body{
     height: 100%;
     overflow: hidden;
     padding: 20px;
-    background: #f1f3f6;
+    /* background: #f1f3f6; */
+    background-color: green;
 }
 
 .slider{
+    background-color: red;
     display: flex;
     gap: 16px;
     transition: transform 0.5s ease;
