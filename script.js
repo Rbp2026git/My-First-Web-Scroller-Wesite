@@ -50,4 +50,4 @@ function autoSlide(){
 
 }
 
-setInterval(autoSlide, 3000);
+//setInterval(autoSlide, 3000);

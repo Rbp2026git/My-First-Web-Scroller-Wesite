@@ -132,7 +132,6 @@ body{
 .lowerNav{
     box-sizing: border-box;
     height: var(--nav-height);
-    background-color: aqua;
     display: grid;
     grid-template-columns: 3fr 2fr;
 }
@@ -148,13 +147,16 @@ body{
     box-sizing: border-box;
     padding: 8px 16px;
     border: 0.2px solid transparent;
-    border-radius: 10px;
-    transition: 0.3s;
+    border-radius: 24px;
+    /* transition: 0.3s; */
 }
 .lowerNav-first ul li:hover{
-    border-color: black;
-    background-color: rgb(226, 221, 221);
+    border-color: rgba(0,0,0,0.1);
+    background-color: rgb(252, 249, 249);
     cursor: pointer;
+
+    transition: transform 0.2sec linear;
+    transform: scale(1.25);
 }
 
 /*Hero*/
