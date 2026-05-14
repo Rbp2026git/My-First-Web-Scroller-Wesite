@@ -32,22 +32,104 @@ modeBtn.addEventListener("click", function(){
     toggleDarkMode();
 })
 
-
+/*form this line , we are working on hero section */
 
 const slider = document.querySelector(".slider");
+const slides = document.querySelectorAll(".slide");
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
+const dotsContainer = document.querySelector(".dots");
+
 
 let index = 0;
 
-function autoSlide(){
+/* HOW MANY SLIDES VISIBLE */
+function getVisibleSlides(){
+    return window.innerWidth <= 768 ? 1 : 3;
+}
 
-    index++;
+/*Create DOTS */
+function createDots(){
+    dotsContainer.innerHTML = "";
 
-    if(index > 2){
-        index = 0;
+    let totalDots = slides.length - getVisibleSlides() + 1;
+
+    for(let i = 0; i < totalDots; i++){
+
+        const dot = document.createElement("div");
+
+        dot.classList.add("dot");
+
+        if(i === index){
+            dot.classList.add("active");
+        }
+
+        dot.addEventListener("click", () => {
+            index = i;
+            updateSlider();
+        });
+
+        dotsContainer.appendChild(dot);
     }
+}
 
-    slider.style.transform = `translateX(-${index * 33.8}%)`;
+/* UPDATE SLIDER */
+function updateSlider(){
+
+    let visibleSlides = getVisibleSlides();
+
+    let slideWidth = slides[0].offsetWidth + 16;
+
+    slider.style.transform =
+        `translateX(-${index * slideWidth}px)`;
+
+    document.querySelectorAll(".dot").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+    });
 
 }
 
-setInterval(autoSlide, 3000);
+/* NEXT */
+function nextSlide(){
+
+    let maxIndex = slides.length - getVisibleSlides();
+
+    index++;
+
+    if(index > maxIndex){
+       index = 0;
+    }
+
+    updateSlider();
+}
+/* PREV */
+function prevSlide(){
+
+    let maxIndex = slides.length - getVisibleSlides();
+
+    index--;
+
+    if(index < 0){
+        index = maxIndex;
+    }
+
+    updateSlider();
+}
+
+/* BUTTON EVENTS */
+nextBtn.addEventListener("click", nextSlide);
+prevBtn.addEventListener("click", prevSlide);
+
+ /* AUTO SLIDE */
+ setInterval(nextSlide, 3000);
+
+ /* RESPONSIVE */
+ window.addEventListener("resize", () => {
+     index = 0;
+     createDots();
+     updateSlider();
+});
+
+//* INITIAL */
+createDots();
+updateSlider();
