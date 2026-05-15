@@ -71,12 +71,24 @@ function createDots(){
     }
 }
 
+/* Calculate from Container Width */
+function getSlideWidth(){
+
+    const container = document.querySelector(".slider-container");
+    const containerWidth = container.clientWidth - 32; //16px padding dono side
+    const visible = getVisibleSlides();
+    const slideW = (containerWidth - (visible - 1) * 16) / visible;
+
+    return slideW + 16; //slide + gap
+}
+
 /* UPDATE SLIDER */
 function updateSlider(){
 
     let visibleSlides = getVisibleSlides();
 
-    let slideWidth = slides[0].offsetWidth + 16;
+    let slideWidth = getSlideWidth();
+    // let slideWidth = slides[0].offsetWidth + 16; // older
 
     slider.style.transform = `translateX(-${index * slideWidth}px)`;
 
@@ -141,5 +153,8 @@ window.addEventListener("resize", () => {
 });
 
 /* INITIAL */
-createDots();
-updateSlider();
+/* window.onload → ensure karta hai ki layout complete ho tab slider initialize ho */
+window.addEventListener("load", () => {
+    createDots();
+    updateSlider();
+});
