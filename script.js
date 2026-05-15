@@ -65,6 +65,7 @@ function createDots(){
         dot.addEventListener("click", () => {
             index = i;
             updateSlider();
+            resetAutoSlide();
         });
         dotsContainer.appendChild(dot);
     }
