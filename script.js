@@ -63,7 +63,7 @@ function createDots(){
         if(i === index){
             dot.classList.add("active");
         }
-
+        
         dot.addEventListener("click", () => {
             index = i;
             updateSlider();
