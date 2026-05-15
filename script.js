@@ -42,7 +42,6 @@ const dotsContainer = document.querySelector(".dots");
 
 
 let index = 0;
-
 /* HOW MANY SLIDES VISIBLE */
 function getVisibleSlides(){
     return window.innerWidth <= 768 ? 1 : 3;
@@ -63,12 +62,10 @@ function createDots(){
         if(i === index){
             dot.classList.add("active");
         }
-        
         dot.addEventListener("click", () => {
             index = i;
             updateSlider();
         });
-
         dotsContainer.appendChild(dot);
     }
 }
@@ -80,13 +77,11 @@ function updateSlider(){
 
     let slideWidth = slides[0].offsetWidth + 16;
 
-    slider.style.transform =
-        `translateX(-${index * slideWidth}px)`;
+    slider.style.transform = `translateX(-${index * slideWidth}px)`;
 
     document.querySelectorAll(".dot").forEach((dot, i) => {
         dot.classList.toggle("active", i === index);
     });
-
 }
 
 /* NEXT */
@@ -99,9 +94,9 @@ function nextSlide(){
     if(index > maxIndex){
        index = 0;
     }
-
     updateSlider();
 }
+
 /* PREV */
 function prevSlide(){
 
@@ -112,24 +107,38 @@ function prevSlide(){
     if(index < 0){
         index = maxIndex;
     }
-
     updateSlider();
 }
 
-/* BUTTON EVENTS */
-nextBtn.addEventListener("click", nextSlide);
-prevBtn.addEventListener("click", prevSlide);
+/*Storing 0f  in variable */
+let autoSlide = setInterval(nextSlide, 3000);
 
- /* AUTO SLIDE */
- setInterval(nextSlide, 3000);
+/*reset Auto Slide */
+/*Ye function banao — reset ke liye */
+function resetAutoSlide(){
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlide, 3000);
+}
 
- /* RESPONSIVE */
- window.addEventListener("resize", () => {
+/* Button events mein resetAutoSlide call karo */
+/* BUTTON EVENT */
+nextBtn.addEventListener("click", ()=>{
+    nextSlide();
+    resetAutoSlide();
+});
+
+prevBtn.addEventListener("click", ()=>{
+    prevSlide();
+    resetAutoSlide();
+});
+
+/* RESPONSIVE */
+window.addEventListener("resize", () => {
      index = 0;
      createDots();
      updateSlider();
 });
 
-//* INITIAL */
+/* INITIAL */
 createDots();
 updateSlider();
