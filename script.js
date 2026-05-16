@@ -31,6 +31,30 @@ contactBtn.addEventListener("click", function(){
 modeBtn.addEventListener("click", function(){
     toggleDarkMode();
 })
+/*  */
+const menuBtn = document.getElementById("menuBtn");
+const popup = document.getElementById("popup");
+const backdrop = document.getElementById("backdrop");
+
+menuBtn.addEventListener("click", (e)=>{
+    e.stopPropagation();
+
+    const isOpen = popup.classList.toggle('open');
+    backdrop.classList.toggle('open', isOpen);
+})
+
+backdrop.addEventListener("click", ()=>{
+    popup.classList.remove('open');
+    backdrop.classList.remove('open');
+})
+
+document.addEventListener('keydown', (e)=>{
+
+    if(e.key === 'Escape'){
+        popup.classList.remove('open');
+        backdrop.classList.remove('open');
+    }
+})
 
 /*form this line , we are working on hero section */
 

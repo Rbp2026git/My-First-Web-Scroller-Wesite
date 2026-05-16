@@ -1,30 +1,33 @@
 /* Reset*/
-:root{
+:root {
     --nav-height: 54px;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body{
+body {
     background: #f4f4f4;
     color: #333;
     transition: 0.3s;
 }
-.dark{
+
+.dark {
     background: #111;
     color: #fff;
 }
+
 /*Header*/
-.header{
+.header {
     box-sizing: border-box;
     padding: 4px;
 }
-.upperNav{
+
+.upperNav {
     box-sizing: border-box;
     height: var(--nav-height);
     width: 100%;
@@ -33,12 +36,17 @@ body{
     align-items: center;
 
 }
-.logo, .search, .login-bar{
+
+.logo,
+.search,
+.login-bar {
     height: var(--nav-height);
-    
+
 }
+
 /*Profile & Logo Section*/
-.menu-icon{
+.menu-icon {
+    box-sizing: border-box;
     width: 40px;
     height: 40px;
     display: flex;
@@ -47,47 +55,179 @@ body{
     cursor: pointer;
 }
 
-.menu-icon svg{
+.menu-icon svg {
     width: 32px;
     height: 32px;
 
-    color: rgb(15, 15, 15); /* icon color */
+    color: rgb(15, 15, 15);
+    /* icon color */
 }
-.logo{
+
+/* yehan se ham menu-icon ko button banakar -- jab ham button click karte hain tab ek popup slide open khul jata hai .
+  yahan se usi menu-popup slide ko style kar rhe hain */
+/* From 70 - 187*/  
+/* Popup animation */
+.popup-wrap {
+    position: absolute;
+    top: 66px;
+    left: 0;
+    /* menu-icon left side mein hai isliye left */
+
+    z-index: 99;
+    opacity: 0;
+    transform: scale(0.9) translateY(-10px);
+    transform-origin: top left;
+
+    transition: opacity 0.22s ease, transform 0.22s ease;
+    pointer-events: none;
+}
+
+.popup-wrap.open {
+    border: 1px solid transparent;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+}
+
+/* --- POPUP CARD --- */
+.popup-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 16px 14px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Dark mode in popup-card*/
+body.dark .popup-card {
+    background: #1e1e2e;
+    border-color: #374151;
+}
+
+/* Header section in popup-card */
+.popup-header-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+/* Explore in popup-header-bar */
+.popup-title-text{
+    font-size: 13px;
+    font-weight: 600;
+    color: #6b7280;
+}
+.popup-close{
+    background: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: #9ca3af;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+.popup-close:hover { background: #f3f4f6; }
+
+/* yahan se popup-card ke andar apps bala section ko style kar rhe hain*/
+.apps-grid{
+    display: grid;
+    grid-template-columns: repeat(3 1fr);
+    gap: 4px;
+}
+.app-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 6px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+.app-tile:hover { background: #f3f4f6; }
+
+body.dark .app-tile:hover { background: #374151; }
+
+/* yahan per hum popup-card ke andar apps ke icons ko style kar rha hun*/
+.tile-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: transform 0.15s;
+}
+.app-tile:hover .tile-icon { transform: scale(1.1); }
+
+/* yahan per ham apps ke naam ko style kar rhe hain*/
+.tile-label {
+    font-size: 11px;
+    color: #6b7280;
+    text-align: center;
+}
+/*yahan per popup-card ke andar ek divider hai usi ko style kar rha hun*/
+.popup-divider { height: 1px; background: #e5e7eb; margin: 12px 0; }
+
+body.dark .popup-divider { background: #374151; }
+/*Styling this section -- 🚀 Free Notes Download karen */
+.popup-cta {
+    display: block;
+    text-align: center;
+    padding: 9px;
+    border-radius: 8px;
+    background: #4F46E5;
+    color: #ffffff !important;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+.popup-cta:hover { background: #4338ca; }
+
+
+.logo {
     box-sizing: border-box;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
-#profile{
+
+#profile {
     box-sizing: border-box;
     width: 46px;
     height: 46px;
     border: 0.55px solid black;
     border-radius: 50%;
-    background-color: burlywood; 
+    background-color: burlywood;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-#profile img{
+
+#profile img {
     height: 46px;
     width: 46px;
     display: block;
     cursor: pointer;
 }
-#vista{
+
+#vista {
     box-sizing: border-box;
     line-height: 1;
 }
+
 /* Search-bar section */
-.search{
+.search {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.search-bar{
+
+.search-bar {
     width: 70%;
     height: 36px;
     display: flex;
@@ -95,13 +235,15 @@ body{
     border: 0.5px solid black;
     border-radius: 7px;
 }
-.search-bar input{
+
+.search-bar input {
     flex: 1;
     border: none;
     outline: none;
     background: transparent;
 }
-.search-icon{
+
+.search-icon {
     height: 36px;
     width: 36px;
     border-left: 0.2px solid black;
@@ -110,16 +252,20 @@ body{
     align-items: center;
 
 }
-.login-bar{
+
+.login-bar {
     box-sizing: border-box;
     display: grid;
-    grid-template-columns: 3fr 3fr 1fr;
+    grid-template-columns: 2.8fr 3fr 1.5fr;
     column-gap: 8px;
     padding: 0 8px;
     justify-content: center;
     align-items: center;
 }
-.login, .signup, #modeBtn{
+
+.login,
+.signup,
+#modeBtn {
     height: 36px;
     display: flex;
     justify-content: center;
@@ -129,13 +275,14 @@ body{
 }
 
 /* Lower Nav in Header section */
-.lowerNav{
+.lowerNav {
     box-sizing: border-box;
     height: var(--nav-height);
     display: grid;
     grid-template-columns: 3fr 2fr;
 }
-.lowerNav-first ul{
+
+.lowerNav-first ul {
     width: 100%;
     height: 100%;
     list-style: none;
@@ -143,15 +290,17 @@ body{
     justify-content: space-around;
     align-items: center;
 }
-.lowerNav-first ul li{
+
+.lowerNav-first ul li {
     box-sizing: border-box;
     padding: 8px 16px;
     border: 0.2px solid transparent;
     border-radius: 24px;
     /* transition: 0.3s; */
 }
-.lowerNav-first ul li:hover{
-    border-color: rgba(0,0,0,0.1);
+
+.lowerNav-first ul li:hover {
+    border-color: rgba(0, 0, 0, 0.1);
     background-color: rgb(252, 249, 249);
     cursor: pointer;
 
@@ -159,24 +308,35 @@ body{
     transform: scale(1.25);
 }
 
+/* ── BACKDROP ── */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 998;
+    display: none;
+}
+.backdrop.open { display: block; }
+
+
 /*Hero*/
-.hero{
+.hero {
     box-sizing: border-box;
     width: 100%;
     height: 45vh;
     min-height: 286.44px;
     padding: 0 4px;
-    border-top: 0.5px solid rgba(0,0,0,0.3);
-    border-bottom: 0.5px solid rgba(0,0,0,0.3);;
+    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
+    ;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, rgb(198, 227, 235), rgb(235, 240, 241));
-    color:white;
+    color: white;
 }
 
 /* Main Container */
-.slider-container{
+.slider-container {
     width: 100%;
     height: 100%;
     padding: 16px;
@@ -184,8 +344,9 @@ body{
     position: relative;
     overflow: hidden;
 }
+
 /* BUTTON */
-.btn{
+.btn {
     position: absolute;
     top: 50%;
 
@@ -200,36 +361,39 @@ body{
     font-size: 22px;
 
     cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     z-index: 10;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.prev{
+
+.prev {
     left: 15px;
 }
-.next{
+
+.next {
     right: 15px;
 }
 
 /* Inner Container */
-.slider{
+.slider {
     display: flex;
     gap: 16px;
     transition: transform 0.5s ease;
 }
 
 /* EACH SLIDE */
-.slide{
+.slide {
     min-width: calc((100% - 32px) / 3);
     height: 230px;
     border-radius: 12px;
     overflow: hidden;
     background: white;
 }
-.slide img{
+
+.slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -237,14 +401,15 @@ body{
 }
 
 /* DOTS */
-.dots{
+.dots {
     margin-top: 10px;
     display: flex;
     justify-content: center;
     gap: 10px;
     /* background-color: green; */
 }
-.dot{
+
+.dot {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -252,94 +417,115 @@ body{
     cursor: pointer;
     transition: 0.3s;
 }
-.dot.active{
+
+.dot.active {
     background: #2874f0;
     width: 24px;
     border-radius: 20px;
 }
 
 /*Services Section*/
-.notes{
+.notes {
     padding: 50px;
     text-align: center;
 }
-.notes h2{
+
+.notes h2 {
     margin-bottom: 20px;
 }
-.cards{
+
+.cards {
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
-.card{
+
+.card {
     box-sizing: border-box;
     background: white;
     padding: 10px;
     width: 250px;
     height: 320px;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
 /*Contact Section*/
-.contact{
+.contact {
     padding: 50px;
     text-align: center;
 }
-input, textarea{
+
+input,
+textarea {
     width: 80%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-#des{
+
+#des {
     align-items: center;
-    display:flex;
+    display: flex;
     justify-content: center;
-    
+
 }
-button{
+
+.submit-btn {
     padding: 10px 20px;
     border: none;
+    border-radius: 10px;
     background: #007bff;
     color: white;
     cursor: pointer;
 }
 
 /*Responsive*/
-@media(max-width: 768px){
-    .cards{
+@media(max-width: 768px) {
+    .cards {
         flex-direction: column;
         align-items: center;
     }
 }
 
 /* Footer Section*/
-.footer{
+.footer {
     padding: 36px;
     background: #333;
     color: #ccc;
 }
-.foot-container{
+
+.foot-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     gap: 1rem;
 }
-.footer-container-grid-box h3{
+
+.footer-container-grid-box h3 {
     height: 24px;
     text-align: center;
     color: white;
     margin-bottom: 1rem;
 }
 
-.main-footer-div, .learn-footer-div, .social-footer-div, .legal-footer-div, .support-footer-div{
+.main-footer-div,
+.learn-footer-div,
+.social-footer-div,
+.legal-footer-div,
+.support-footer-div {
     display: flex;
     flex-direction: column;
     gap: 2px;
 }
-.main-footer-div a, .learn-footer-div a, .social-footer-div a, .legal-footer-div a, .support-footer-div a{   
+
+.main-footer-div a,
+.learn-footer-div a,
+.social-footer-div a,
+.legal-footer-div a,
+.support-footer-div a {
     /* text-align: center; */
     display: flex;
     justify-content: center;
@@ -349,11 +535,13 @@ button{
     color: #ccc;
     cursor: pointer;
 }
-.social-footer-div a img{
+
+.social-footer-div a img {
     height: 24px;
     width: 24px;
 }
-.end-footer-div{
+
+.end-footer-div {
     line-height: 1.25rem;
     margin-top: 1rem;
     text-align: center;

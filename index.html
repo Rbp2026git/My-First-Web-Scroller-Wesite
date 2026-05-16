@@ -12,24 +12,28 @@
         <div class="upperNav">
             <div class="logo">
                 <div class="menu-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <!-- Row 1 -->
-                        <circle cx="5" cy="5" r="1.5"/>
-                        <circle cx="12" cy="5" r="1.5"/>
-                        <circle cx="19" cy="5" r="1.5"/>
-                        <!-- Row 2 -->
-                        <circle cx="5" cy="12" r="1.5"/>
-                        <circle cx="12" cy="12" r="1.5"/>
-                        <circle cx="19" cy="12" r="1.5"/>
-                        <!-- Row 3 -->
-                        <circle cx="5" cy="19" r="1.5"/>
-                        <circle cx="12" cy="19" r="1.5"/>
-                        <circle cx="19" cy="19" r="1.5"/>
-                    </svg>
+                    <button class="menu-btn" id="menuBtn" aria-level="services menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <!-- Row 1 -->
+                            <circle cx="5" cy="5" r="1.5"/>
+                            <circle cx="12" cy="5" r="1.5"/>
+                            <circle cx="19" cy="5" r="1.5"/>
+                            <!-- Row 2 -->
+                            <circle cx="5" cy="12" r="1.5"/>
+                            <circle cx="12" cy="12" r="1.5"/>
+                            <circle cx="19" cy="12" r="1.5"/>
+                            <!-- Row 3 -->
+                            <circle cx="5" cy="19" r="1.5"/>
+                            <circle cx="12" cy="19" r="1.5"/>
+                            <circle cx="19" cy="19" r="1.5"/>
+                        </svg>
+                    </button>
                 </div>
+
                 <div id="profile">
                     <img src="assets/icons/businessman-svgrepo-com.svg" alt="Website_logo">
                 </div>
+
                 <h2 id="vista">Scroll Vista</h2>
             </div>
             <div class="search">
@@ -43,7 +47,57 @@
                 <div class="signup"><a href="#">signUp</a></div>
                 <button id="modeBtn">🌙</button>
             </div>
-        </div>
+
+            <!-- Popup (navbar ke baad, body ke andar) -->
+            <div class="popup-wrap" id="popup">
+                <div class="popup-card">
+
+                    <div class="popup-header-bar">
+                        <span class="popup-title-text">Explore</span>
+                        <button class="popup-close" id="popupClose">X</button>
+                    </div>
+
+                    <div class="apps-grid">
+
+                        <a class="app-tile" href="#notes">
+                            <div class="title-icon" style="background:#EEF2FF;">📝</div>
+                            <span class="title-label">Notes</span>
+                        </a>
+
+                        <a class="app-tile" href="#">
+                            <div class="tile-icon" style="background:#ECFDF5;">🎓</div>
+                            <span class="tile-label">Courses</span>
+                        </a>
+
+                        <a class="app-tile" href="#">
+                            <div class="tile-icon" style="background:#FFF7ED;">▶️</div>
+                            <span class="tile-label">Tutorials</span>
+                        </a>
+
+                        <a class="app-tile" href="#">
+                            <div class="tile-icon" style="background:#FEF3C7;">✍️</div>
+                            <span class="tile-label">Blog</span>
+                        </a>
+
+                        <a class="app-tile" href="#">
+                            <div class="tile-icon" style="background:#F0F9FF;">📅</div>
+                            <span class="tile-label">Events</span>
+                        </a>
+
+                        <a class="app-tile" href="#contact">
+                            <div class="tile-icon" style="background:#FFF1F2;">📬</div>
+                            <span class="tile-label">Contact</span>
+                        </a>
+
+                    </div>
+
+                    <div class="popup-divider"></div>
+
+                    <a class="popup-cta" href="#">🚀 Free Notes Download karen</a>
+
+                </div>  <!--popup-card END-->
+            </div> <!--Popup-wrap END-->
+        </div> <!--UPPERNAV END-->
 
         <div class="lowerNav">
             <div class="lowerNav-first">
@@ -60,6 +114,10 @@
             <div class="lowerNav-second"></div>
         </div>
     </header>
+
+    <!-- backdrop DIV -->
+    <div class="backdrop" id="backdrop"></div>
+
     <!--Hero Section-->
     <section id="home" class="hero">
 
@@ -154,7 +212,7 @@
                 <textarea name="" id="description" placeholder="Your message"></textarea>
             </div>
 
-            <button type="submit">Send</button>
+            <button class="submit-btn" type="submit">Send</button>
         </form>
     </section>
     <!--Footer Section-->
