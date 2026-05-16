@@ -31,30 +31,35 @@ contactBtn.addEventListener("click", function(){
 modeBtn.addEventListener("click", function(){
     toggleDarkMode();
 })
+
+
 /*  */
-const menuBtn = document.getElementById("menuBtn");
+const menuIcon = document.getElementById("menuIcon");
 const popup = document.getElementById("popup");
 const backdrop = document.getElementById("backdrop");
+const popupClose = document.getElementById("popupClose");
 
-menuBtn.addEventListener("click", (e)=>{
+menuIcon.addEventListener("click", (e)=>{
     e.stopPropagation();
 
     const isOpen = popup.classList.toggle('open');
     backdrop.classList.toggle('open', isOpen);
 })
 
-backdrop.addEventListener("click", ()=>{
+function closePopup() {
     popup.classList.remove('open');
     backdrop.classList.remove('open');
-})
+}
 
-document.addEventListener('keydown', (e)=>{
+popupClose.addEventListener("click", closePopup);
+backdrop.addEventListener("click", closePopup);
 
+document.addEventListener("keydown", (e) =>{
     if(e.key === 'Escape'){
-        popup.classList.remove('open');
-        backdrop.classList.remove('open');
+        closePopup();
     }
 })
+
 
 /*form this line , we are working on hero section */
 
