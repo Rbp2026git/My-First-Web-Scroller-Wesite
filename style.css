@@ -161,16 +161,17 @@ body{
 
 /*Hero*/
 .hero{
+    box-sizing: border-box;
     width: 100%;
     height: 45vh;
-    min-height: 300px;
+    min-height: 286.44px;
     padding: 0 4px;
     border-top: 0.5px solid rgba(0,0,0,0.3);
     border-bottom: 0.5px solid rgba(0,0,0,0.3);;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #007bff, #00c6ff);
+    background: linear-gradient(to bottom, rgb(198, 227, 235), rgb(235, 240, 241));
     color:white;
 }
 
