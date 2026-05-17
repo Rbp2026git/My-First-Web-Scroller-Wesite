@@ -34,12 +34,12 @@ modeBtn.addEventListener("click", function(){
 
 
 /*  */
-const menuIcon = document.getElementById("menuIcon");
+const menuBtn = document.getElementById("menuBtn");
 const popup = document.getElementById("popup");
 const backdrop = document.getElementById("backdrop");
 const popupClose = document.getElementById("popupClose");
 
-menuIcon.addEventListener("click", (e)=>{
+menuBtn.addEventListener("click", (e)=>{
     e.stopPropagation();
 
     const isOpen = popup.classList.toggle('open');
