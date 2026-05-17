@@ -50,7 +50,7 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 /*yahan se menu-icon, button aur svg ko style kiya gaya hai*/
 .menu-icon {
@@ -84,7 +84,14 @@ body {
 }
 #vista {
     box-sizing: border-box;
+    padding: 2px 8px;
+    border-radius: 16px;
+    border: 0.25px solid transparent;
     line-height: 1;
+}
+#vista:hover {
+    cursor: pointer;
+    background-color: rgba(165, 156, 156, 0.1);
 }
 
 /* yehan se ham menu-icon ko button banakar -- jab ham button click karte hain tab ek popup slide open khul jata hai .
