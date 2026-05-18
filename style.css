@@ -1,6 +1,6 @@
 /* Reset*/
 :root {
-    --nav-height: 54px;
+    --nav-height: 48px;
 }
 
 * {
@@ -318,7 +318,6 @@ body.dark .popup-divider { background: #374151; }
     padding: 8px 16px;
     border: 0.2px solid transparent;
     border-radius: 24px;
-    /* transition: 0.3s; */
 }
 
 .lowerNav-first ul li:hover {
@@ -326,8 +325,8 @@ body.dark .popup-divider { background: #374151; }
     background-color: rgb(252, 249, 249);
     cursor: pointer;
 
-    transition: transform 0.2s linear;
-    transform: scale(1.25);
+    transition: transform 0.1s linear;
+    transform: scale(1.2);
 }
 
 /* ── BACKDROP ── */
