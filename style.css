@@ -163,7 +163,7 @@ body.dark .popup-card {
 /* yahan se popup-card ke andar apps bala section ko style kar rhe hain*/
 .apps-grid{
     display: grid;
-    grid-template-columns: repeat(3 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 4px;
 }
 .app-tile {
