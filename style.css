@@ -37,11 +37,8 @@ body {
 
 }
 
-.logo,
-.search,
-.login-bar {
+.logo, .search, .login-bar {
     height: var(--nav-height);
-
 }
 /*Yahan se ham logo-section ko style kar rhe hain*/
 .logo {
