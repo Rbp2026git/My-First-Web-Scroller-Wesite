@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroll Vista</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="header">
 
@@ -15,17 +17,17 @@
                     <button class="menu-btn" id="menuBtn" aria-level="services menu">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <!-- Row 1 -->
-                            <circle cx="5" cy="5" r="1.5"/>
-                            <circle cx="12" cy="5" r="1.5"/>
-                            <circle cx="19" cy="5" r="1.5"/>
+                            <circle cx="5" cy="5" r="1.5" />
+                            <circle cx="12" cy="5" r="1.5" />
+                            <circle cx="19" cy="5" r="1.5" />
                             <!-- Row 2 -->
-                            <circle cx="5" cy="12" r="1.5"/>
-                            <circle cx="12" cy="12" r="1.5"/>
-                            <circle cx="19" cy="12" r="1.5"/>
+                            <circle cx="5" cy="12" r="1.5" />
+                            <circle cx="12" cy="12" r="1.5" />
+                            <circle cx="19" cy="12" r="1.5" />
                             <!-- Row 3 -->
-                            <circle cx="5" cy="19" r="1.5"/>
-                            <circle cx="12" cy="19" r="1.5"/>
-                            <circle cx="19" cy="19" r="1.5"/>
+                            <circle cx="5" cy="19" r="1.5" />
+                            <circle cx="12" cy="19" r="1.5" />
+                            <circle cx="19" cy="19" r="1.5" />
                         </svg>
                     </button>
                 </div>
@@ -70,7 +72,7 @@
                             <div class="tile-icon" style="background:#EEF2FF;">📝</div>
                             <span class="tile-label">Notes</span>
                         </a>
-                        
+
                         <a class="app-tile" href="#">
                             <div class="tile-icon" style="background:#ECFDF5;">🎓</div>
                             <span class="tile-label">Courses</span>
@@ -102,7 +104,7 @@
 
                     <a class="popup-cta" href="#">🚀 Free Notes Download karen</a>
 
-                </div>  <!--popup-card END-->
+                </div> <!--popup-card END-->
             </div> <!--Popup-wrap END-->
         </div> <!--UPPERNAV END-->
 
@@ -125,79 +127,106 @@
     <!-- backdrop DIV -->
     <div class="backdrop" id="backdrop"></div>
 
-    <!--Hero Section-->
-    <section id="home" class="hero">
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="main-content">
 
-        <div class="slider-container">
-            <!-- BUTTONS -->
-            <button class="btn prev">&#10094;</button>
-            <button class="btn next">&#10095;</button>
-            <!--Slider-->
-            <div class="slider">
-                <div class="slide"><img src="assets\images\jlab-srls-y2WomcHz1wQ-unsplash.jpg" alt="slide1"></div>
-                <div class="slide"><img src="assets\images\aditya-siva-6rDbvXzIVpQ-unsplash.jpg" alt="slide2"></div>
-                <div class="slide"><img src="assets\images\julian-yu-_WuPjE-MPHo-unsplash.jpg" alt="slide3"></div>
-                <div class="slide"><img src="assets\images\growtika-nGoCBxiaRO0-unsplash.jpg" alt="slide4"></div>
-                <div class="slide"><img src="assets\images\wallpaperflare.com_wallpaper (2).jpg" alt="slide5"></div>
-                <div class="slide"><img src="https://picsum.photos/id/1015/800/400" alt="slide6"></div>
-                <div class="slide"><img src="https://picsum.photos/id/1016/800/400" alt="slide7"></div>
-            </div>
-            <!--DOTS-->
-            <div class="dots"></div>
-        </div>
-        
-    </section>
+        <!-- ============================= HOME SECTION ===================================== -->
+        <!-- ═══════════ DEFAULT VIEW ═══════════ -->
+        <section id="home-section" class="page-section active">
 
-    <!--Notes Section-->
-    <section id="notes" class="notes">
-        <h2>Our Handwritten Notes</h2>
+            <!--Hero Section = Start -->
+            <div id="hero" class="hero">
+                <div class="slider-container">
+                    <!-- BUTTONS -->
+                    <button class="btn prev">&#10094;</button>
+                    <button class="btn next">&#10095;</button>
+                    <!--Slider-->
+                    <div class="slider">
+                        <div class="slide"><img src="assets\images\jlab-srls-y2WomcHz1wQ-unsplash.jpg" alt="slide1">
+                        </div>
+                        <div class="slide"><img src="assets\images\aditya-siva-6rDbvXzIVpQ-unsplash.jpg" alt="slide2">
+                        </div>
+                        <div class="slide"><img src="assets\images\julian-yu-_WuPjE-MPHo-unsplash.jpg" alt="slide3">
+                        </div>
+                        <div class="slide"><img src="assets\images\growtika-nGoCBxiaRO0-unsplash.jpg" alt="slide4">
+                        </div>
+                        <div class="slide"><img src="assets\images\wallpaperflare.com_wallpaper (2).jpg" alt="slide5">
+                        </div>
+                        <div class="slide"><img src="https://picsum.photos/id/1015/800/400" alt="slide6"></div>
+                        <div class="slide"><img src="https://picsum.photos/id/1016/800/400" alt="slide7"></div>
+                    </div>
+                    <!--DOTS-->
+                    <div class="dots"></div>
+                </div>
+            </div>
+            <!-- Hero-Section = End -->
+            <!-- Home ke neeche welcome content -->
+            <div class="home-welcome">
+                <h2>Welcome to Scroll Vista 👋</h2>
+                <p>Handwritten notes, tutorials, courses aur bahut kuch — sab ek jagah.</p>
+                <div class="home-quick-links">
+                    <button class="quick-btn" data-section="notes">📝 Notes Dekhen</button>
+                    <button class="quick-btn" data-section="courses">🎓 Courses</button>
+                    <button class="quick-btn" data-section="tutorials">▶️ Tutorials</button>
+                </div>
+            </div>
+        </section>
+        <!-- ============================= HOME SECTION END ============================ -->
 
-        <div class="cards">
-            <div class="card">
-                <h3>HTML</h3>
-                <p>Complete handwritten notes</p>
+        <!-- ============================Notes Section = Start ========================= -->
+        <section id="section-notes" class="page-section">
+            <div id="notes" class="notes inner-section">
+                <h2>Our Handwritten Notes</h2>
+                <div class="cards">
+                    <div class="card"><h3>HTML</h3><p>Complete handwritten notes</p></div>
+                    <div class="card"><h3>CSS</h3><p>Complete handwritten notes</p></div>
+                    <div class="card"><h3>JavaScript</h3><p>Complete handwritten notes</p></div>
+                    <div class="card"><h3>Git & GitHub</h3><p>Git Commands Cheat Sheet</p></div>
+                    <div class="card"><h3>NPM</h3><p>Node Package Manager</p></div>
+                </div>
             </div>
-            <div class="card">
-                <h3>CSS</h3>
-                <p>Complete handwritten notes</p>
+        </section>
+        <!--============================ Notes Section = End ============================ -->
+        <!--============================ COURSES SECTION = Start ============================ -->
+        <section id="section-courses" class="page-section">
+            <div id="cources" class=" courses section-inner">
+                <h2>🎓 Our Courses</h2>
+                <div class="cards">
+                    <div class="card"><h3>Web Development</h3><p>HTML, CSS, JS se lekar React tak</p></div>
+                    <div class="card"><h3>Python Basics</h3><p>Beginner to Intermediate Python</p></div>
+                    <div class="card"><h3>DSA in Java</h3><p>Data Structures & Algorithms</p></div>
+                    <div class="card"><h3>React.js</h3><p>Modern frontend development</p></div>
+                </div>
             </div>
-            <div class="card">
-                <h3>JavaScript</h3>
-                <p>Complete handwritten notes</p>
-            </div>
-            <div class="card">
-                <h3>Git & GitHub</h3>
-                <p>Git Commands Cheat Sheet</p>
-            </div>
-            <div class="card">
-                <h3>NPM</h3>
-                <p>Node Package Manager</p>
-            </div>
-        </div>
-    </section>
+        </section>
+        <!--============================ COURSES SECTION = End ============================ -->
+        <!--Yahan se start karna hai-->
+        <!--Contact Section-->
+        <section id="contact" class="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <div>
+                    <label for="name">Name: </label>
+                    <input type="text" id="name" name="name" placeholder="Your Name">
+                </div>
 
-    <!--Contact Section-->
-    <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <form>
-            <div>
-                <label for="name">Name: </label>
-                <input type="text" id="name" name="name" placeholder="Your Name">
-            </div>
+                <div>
+                    <label for="email">E-mail: </label>
+                    <input type="email" id="email" name="email" placeholder="Enter yor email">
+                </div>
 
-            <div>
-                <label for="email">E-mail: </label>
-                <input type="email" id="email" name="email" placeholder="Enter yor email">
-            </div>
+                <div id="des">
+                    <label for="description">Description: </label>
+                    <textarea name="" id="description" placeholder="Your message"></textarea>
+                </div>
 
-            <div id="des">
-                <label for="description">Description: </label>
-                <textarea name="" id="description" placeholder="Your message"></textarea>
-            </div>
+                <button class="submit-btn" type="submit">Send</button>
+            </form>
+        </section>
 
-            <button class="submit-btn" type="submit">Send</button>
-        </form>
-    </section>
+
+    </main><!--MAIN SECTION END-->
+
     <!--Footer Section-->
     <footer class="footer">
         <div class="foot-container">
@@ -254,4 +283,5 @@
     </footer>
     <script src="script.js"></script>
 </body>
+
 </html>

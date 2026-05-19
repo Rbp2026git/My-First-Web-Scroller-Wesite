@@ -3,24 +3,24 @@ let notesBtn = document.getElementById("notesBtn");
 let contactBtn = document.getElementById("contactBtn");
 
 //Scroll function
-function scrollToSection(sectionId){
-    document.getElementById(sectionId).scrollIntoView({
-        behavior: "smooth"
-    });
-}
+// function scrollToSection(sectionId){
+//     document.getElementById(sectionId).scrollIntoView({
+//         behavior: "smooth"
+//     });
+// }
 
-//Add event listner
-homeBtn.addEventListener("click", function(){
-    scrollToSection("home");
-})
+// //Add event listner
+// homeBtn.addEventListener("click", function(){
+//     scrollToSection("home");
+// })
 
-notesBtn.addEventListener("click", function(){
-    scrollToSection("notes");
-})
+// notesBtn.addEventListener("click", function(){
+//     scrollToSection("notes");
+// })
 
-contactBtn.addEventListener("click", function(){
-    scrollToSection("contact");
-})
+// contactBtn.addEventListener("click", function(){
+//     scrollToSection("contact");
+// })
 
 /* ========================
 DARK MODE
