@@ -1,18 +1,12 @@
 let homeBtn = document.getElementById("homeBtn");
 let notesBtn = document.getElementById("notesBtn");
 let contactBtn = document.getElementById("contactBtn");
-let modeBtn = document.getElementById("modeBtn");
 
 //Scroll function
 function scrollToSection(sectionId){
     document.getElementById(sectionId).scrollIntoView({
         behavior: "smooth"
     });
-}
-
-//Dark Mode Toggle
-function toggleDarkMode(){
-    document.body.classList.toggle("dark");
 }
 
 //Add event listner
@@ -28,8 +22,13 @@ contactBtn.addEventListener("click", function(){
     scrollToSection("contact");
 })
 
-modeBtn.addEventListener("click", function(){
-    toggleDarkMode();
+/* ========================
+DARK MODE
+======================== */
+let modeBtn = document.getElementById("modeBtn");
+modeBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    modeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 })
 
 
