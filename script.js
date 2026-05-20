@@ -1,3 +1,41 @@
+/* ============== SECTION SWITCHING (SPA) =============== */
+
+// Sabhi sections ko ek object mein map karo
+const sections = document.querySelectorAll(".page-section");
+const navItems = document.querySelectorAll(".nav-item");
+
+/**
+# Kisi bhi section ko show karo, baaki hide karo.
+# @param {string} sectionId - e.g. "home", "notes", "contact"
+*/
+function showSection(sectionId) {
+    // Sabhi sections hide karo
+    sections.forEach(sec => sec.classList.remove("active"));
+
+    // Target section dikhao
+    const target = document.getElementById("section-" + sectionId);
+    if (target) {
+        target.classList.add("active");
+        // Smooth scroll to top of page
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // Nav active state update karo
+    navItems.forEach(item => {
+        item.classList.remove("active-nav");
+        if (item.dataset.section === sectionId) {
+            item.classList.add("active-nav");
+        }
+    });
+}
+// Lower nav items pe click listener
+navItems.forEach(item => {
+    item.addEventListener("click", function () {
+        showSection(this.dataset.section);
+    });
+});
+
+
 let homeBtn = document.getElementById("homeBtn");
 let notesBtn = document.getElementById("notesBtn");
 let contactBtn = document.getElementById("contactBtn");
