@@ -100,14 +100,13 @@ body.dark .menu-icon svg { color: #eee}
 
 /* yehan se ham menu-icon ko button banakar -- jab ham button click karte hain tab ek popup slide open khul jata hai .
   yahan se usi menu-popup slide ko style kar rhe hain */
-/* From 70 - 187*/  
+
 /* Popup animation */
 .popup-wrap {
     position: absolute;
     top: 66px;
     left: 0;
     /* menu-icon left side mein hai isliye left */
-
     z-index: 99;
     opacity: 0;
     transform: scale(0.9) translateY(-10px);
@@ -116,7 +115,6 @@ body.dark .menu-icon svg { color: #eee}
     transition: opacity 0.22s ease, transform 0.22s ease;
     pointer-events: none;
 }
-
 .popup-wrap.open {
     border: 1px solid transparent;
     opacity: 1;
@@ -132,13 +130,11 @@ body.dark .menu-icon svg { color: #eee}
     padding: 8px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
 }
-
 /* Dark mode in popup-card*/
 body.dark .popup-card {
     background: #1e1e2e;
     border-color: #374151;
 }
-
 /* Header section in popup-card */
 .popup-header-bar{
     height: 40px;
@@ -167,13 +163,12 @@ body.dark .popup-card {
     color: #9ca3af;
     padding: 2px 6px;
     border-radius: 6px;
+    cursor: pointer;
 }
 .popup-title-text:hover, .popup-close:hover {
     border: 0.25px solid rgba(0, 0, 0, 0.1);
     background-color: #f3f4f6;
-    cursor: pointer;
 }
-
 
 /* yahan se popup-card ke andar apps bala section ko style kar rhe hain*/
 .apps-grid{
@@ -192,7 +187,6 @@ body.dark .popup-card {
     transition: background 0.15s;
 }
 .app-tile:hover { background: #f3f4f6; }
-
 body.dark .app-tile:hover { background: #374151; }
 
 /* yahan per hum popup-card ke andar apps ke icons ko style kar rha hun*/
@@ -233,15 +227,13 @@ body.dark .popup-divider { background: #374151; }
 }
 .popup-cta:hover { background: #4338ca; }
 
-
-/* Search-bar section */
+/* ----------------- Search-bar section ------------------------ */
 .search {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .search-bar {
     width: 70%;
     height: 36px;
@@ -249,15 +241,18 @@ body.dark .popup-divider { background: #374151; }
     align-items: center;
     border: 0.5px solid rgba(0, 0, 0, 0.12);
     border-radius: 7px;
+    background: white;
 }
+body.dark .search-bar { background: #1e1e2e; border-color: rgba(255,255,255,0.15);}
 
 .search-bar input {
     flex: 1;
     border: none;
     outline: none;
     background: transparent;
+    /*padding: 0 8px;*/
+    /* color: inherit; */
 }
-
 .search-icon {
     height: 36px;
     width: 36px;
@@ -267,6 +262,7 @@ body.dark .popup-divider { background: #374151; }
     align-items: center;
 
 }
+/* ------------------------- Login - Bar ------------------------------*/
 /*Yahan se login-bar wala section ko style kiya gaya hai*/
 .login-bar {
     box-sizing: border-box;
@@ -302,6 +298,7 @@ body.dark .popup-divider { background: #374151; }
     color: #333;
     cursor: pointer;
 }
+body.dark .login a, body.dark .signup a { color: #eee;}
 #profile-img-div{
     border-radius: 50%;
     width: 36px;
@@ -336,17 +333,26 @@ body.dark .popup-divider { background: #374151; }
     padding: 8px 16px;
     border: 0.2px solid transparent;
     border-radius: 24px;
+    cursor: pointer;
+    transition: transform 0.1s linear, background 0.15s;
 }
-
 .lowerNav-first ul li:hover {
     border-color: rgba(0, 0, 0, 0.1);
     background-color: rgb(252, 249, 249);
-    cursor: pointer;
-
-    transition: transform 0.1s linear;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
-
+/* -------- Active nav item highlight ------------ */
+.lowerNav-first ul li.active-nav {
+    background-color: #4F46E5;
+    color: white;
+    border-color: transparent;
+}
+.lowerNav-first ul li.active-nav:hover {
+    background-color: #4338ca;
+}
+body.dark .lowerNav-first ul li:hover {
+    background-color: #333;
+}
 /* -------------  lowerNav - Second DIV -------------*/
 .lowerNav-second{
     display: flex;
@@ -362,7 +368,7 @@ body.dark .popup-divider { background: #374151; }
     padding: 6px 10px;
     cursor: pointer;
 }
-/* ── BACKDROP ── */
+/* ── ------- BACKDROP ----------- ── */
 .backdrop {
     position: fixed;
     inset: 0;
