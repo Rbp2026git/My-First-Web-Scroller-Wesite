@@ -377,8 +377,28 @@ body.dark .lowerNav-first ul li:hover {
 }
 .backdrop.open { display: block; }
 
+/* =============== MAIN CONTENT & SECTIONS ================ */
+/* .main-content {
+    min-height: 60vh;
+} */
 
-/*Hero*/
+/* Sabhi sections hidden by default */
+.page-section {
+    display: none;
+    animation: fadeIn o.3s ease;
+}
+/* Sirf active section dikhega */
+.page-section.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+/* ----------- DEFAULT VIEW ( Home Section ) ------------------*/
+
+/* -----------Hero ------------*/
 .hero {
     box-sizing: border-box;
     width: 100%;
@@ -387,15 +407,14 @@ body.dark .lowerNav-first ul li:hover {
     padding: 0 4px;
     border-top: 0.5px solid rgba(0, 0, 0, 0.3);
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
-    ;
+
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to bottom, rgb(198, 227, 235), rgb(235, 240, 241));
     color: white;
 }
-
-/* Main Container */
+/* -------Slider Container ------------ */
 .slider-container {
     width: 100%;
     height: 100%;
@@ -404,8 +423,7 @@ body.dark .lowerNav-first ul li:hover {
     position: relative;
     overflow: hidden;
 }
-
-/* BUTTON */
+/* ------------ BUTTON inside Slider-container (Hero ) ----------  */
 .btn {
     position: absolute;
     top: 50%;
@@ -428,14 +446,8 @@ body.dark .lowerNav-first ul li:hover {
     justify-content: center;
     align-items: center;
 }
-
-.prev {
-    left: 15px;
-}
-
-.next {
-    right: 15px;
-}
+.prev { left: 15px; }
+.next { right: 15px; }
 
 /* Inner Container */
 .slider {
@@ -443,8 +455,7 @@ body.dark .lowerNav-first ul li:hover {
     gap: 16px;
     transition: transform 0.5s ease;
 }
-
-/* EACH SLIDE */
+/* ------ EACH SLIDE -------- */
 .slide {
     min-width: calc((100% - 32px) / 3);
     height: 230px;
@@ -452,15 +463,14 @@ body.dark .lowerNav-first ul li:hover {
     overflow: hidden;
     background: white;
 }
-
+/*---------- Slide image --------*/
 .slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-
-/* DOTS */
+/* -------- DOTS ---------*/
 .dots {
     margin-top: 10px;
     display: flex;
@@ -468,7 +478,7 @@ body.dark .lowerNav-first ul li:hover {
     gap: 10px;
     /* background-color: green; */
 }
-
+/*------ EACH DOT ------ */
 .dot {
     width: 10px;
     height: 10px;
@@ -477,62 +487,433 @@ body.dark .lowerNav-first ul li:hover {
     cursor: pointer;
     transition: 0.3s;
 }
-
 .dot.active {
     background: #2874f0;
     width: 24px;
     border-radius: 20px;
 }
-
-/*Services Section*/
-.notes {
-    padding: 50px;
+/* --------- Home Welcome Content ---------- */
+.home-welcome {
+    padding: 40px;
     text-align: center;
+    background: white;
 }
+body.dark .home-welcome { background: #1a1a2e; }
 
-.notes h2 {
-    margin-bottom: 20px;
+.home-welcome h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
 }
-
-.cards {
+.home-welcome p {
+    color: #666;
+    margin-bottom: 24px;
+    font-size: 1rem;
+}
+body.dark .home-welcome p { color: #aaa; }
+.home-quick-links {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    gap: 12px;
     flex-wrap: wrap;
 }
+.quick-btn {
+    padding: 10px 22px;
+    border: 2px solid #4F46E5;
+    border-radius: 24px;
+    background: transparent;
+    color: #4F46E5;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.quick-btn:hover {
+    background: #4F46E5;
+    color: white;
+    transform: translateY(-2px);
+}
+/* ----------- DEFAULT VIEW ( Home Section ) Ends Here------------------*/
 
+/* ------------------- ".section-inner" exists in courses, Notes, Event Contact --------------*/
+/* ======== COMMON SECTION STYLE in ".section-inner" ========= */
+.section-inner { padding: 50px 40px; text-align: center; }
+.section-inner h2 { margin-bottom: 28px; font-size: 1.6rem; }
+
+/* -------------- Courses-Sction & Notes-Section ------------------ */
+/* -------- COURSES & NOTES CARDS ------------ */
+.cards {display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; }
 .card {
     box-sizing: border-box;
     background: white;
-    padding: 10px;
-    width: 250px;
-    height: 320px;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 10px;
+    width: 220px;
+    min-height: 200px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+body.dark .card { background: #1e1e2e; }
+/* -------------- Courses-Sction & Notes-Section end here ------------------ */
 
-/*Contact Section*/
-.contact {
-    padding: 50px;
+/* ------------------ Tutorial-Sction & Blogs-Section ------------------- */
+/* ═══════ PAGE HERO  (Tutorials & Blog common styling) ════════ */
+.page-hero {
+    padding: 60px 40px 50px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.blog-hero { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 40%, #fbbf24 100%); }
+body.dark .blog-hero { background: linear-gradient(135deg, #292524 0%, #1c1917 100%); }
+
+.tutorials-hero { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 40%, #93c5fd 100%); }
+body.dark .tutorials-hero { background: linear-gradient(135deg, #1e3a5f 0%, #172554 100%); }
+
+.page-hero-content { position: relative; z-index: 1; }
+.page-hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(6px);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 14px;
+}
+body.dark .page-hero-tag {
+    background: rgba(255,255,255,0.1);
+    color: #ccc;
+}
+.page-hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+body.dark .page-hero h1 { color: #f3f4f6; }
+.page-hero p {
+    font-size: 15px;
+    color: #555;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+body.dark .page-hero p { color: #9ca3af; }
+
+/* ════════════════════════TUTORIALS SECTION ═══════════════════════ */
+.tutorials-section {
+    padding: 40px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* Filter buttons */
+.tutorials-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+.filter-btn {
+    padding: 7px 18px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 24px;
+    background: transparent;
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+.filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+body.dark .filter-btn {
+    border-color: #374151;
+    color: #9ca3af;
+}
+body.dark .filter-btn.active {
+    background: var(--accent);
+    color: #fff;
 }
 
-input,
-textarea {
+/* Tutorial grid */
+.tutorials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+.tutorial-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.tutorial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.14);
+}
+body.dark .tutorial-card {
+    background: #1e1e2e;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+.tutorial-thumb {
+    height: 160px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.tut-play-icon {
+    font-size: 40px;
+    color: rgba(255,255,255,0.9);
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.tutorial-card:hover .tut-play-icon { transform: scale(1.15); }
+
+.tut-duration {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+.tutorial-info {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.tut-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: fit-content;
+}
+
+.tut-badge.html  { background: #fff7ed; color: #f97316; }
+.tut-badge.css   { background: #eff6ff; color: #3b82f6; }
+.tut-badge.js    { background: #fefce8; color: #ca8a04; }
+.tut-badge.git   { background: #f0fdf4; color: #16a34a; }
+
+.tutorial-info h3 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111;
+}
+body.dark .tutorial-info h3 { color: #f3f4f6; }
+.tutorial-info p {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+.tut-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
+}
+/* ════════════════════════ TUTORIAL SECTION ends here ════════════════════════ */
+
+/* ════════════════════════ BLOG SECTION ════════════════════════ */
+.blog-section {
+    padding: 40px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
+}
+.blog-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+.blog-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,0.14); }
+body.dark .blog-card {
+    background: #1e1e2e;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+/* Featured card spans full width */
+.blog-card.featured {
+    grid-column: 1 / -1;
+    flex-direction: row;
+}
+.blog-card.featured .blog-card-img {
+    min-width: 280px;
+    border-radius: 0;
+}
+.blog-card-img {
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    flex-shrink: 0;
+}
+.blog-card-emoji { user-select: none; }
+.blog-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+.blog-tag {
+    display: inline-block;
+    background: #EEF2FF;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: fit-content;
+}
+.blog-card-body h2 {
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111;
+}
+body.dark .blog-card-body h2 { color: #f3f4f6; }
+.blog-card-body p {
+    font-size: 14px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+.blog-meta {
+    display: flex;
+    gap: 14px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: auto;
+}
+.blog-read-btn {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+    width: fit-content;
+}
+.blog-read-btn:hover { border-bottom-color: var(--accent); }
+/* ═══════════════ BLOG SECTION ends here ════════════════ */
+
+/* ==================== EVENTS SECTION ==================== */
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 680px;
+    margin: 0 auto;
+    text-align: left;
+}
+.event-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+    transition: transform 0.2s;
+}
+
+.event-card:hover { transform: translateX(4px); }
+body.dark .event-card { background: #1e1e2e; }
+
+.event-date {
+    min-width: 58px;
+    height: 58px;
+    background: #4F46E5;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+.event-date .day {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.event-date .month {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+.event-info h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+.event-info p {
+    font-size: 0.82rem;
+    color: #888;
+}
+
+/* =================== CONTACT SECTION ================= */
+.contact-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+input, textarea {
     width: 80%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    background: white;
+    color: #333;
 }
-
+body.dark input, body.dark textarea {
+    background: #1e1e2e;
+    color: #eee;
+    border-color: #374151;
+}
 #des {
-    align-items: center;
     display: flex;
+    align-items: center;
     justify-content: center;
-
 }
-
 .submit-btn {
     padding: 10px 20px;
     border: none;
@@ -540,17 +921,15 @@ textarea {
     background: #007bff;
     color: white;
     cursor: pointer;
+    font-size: 1rem;
+    margin-top: 8px;
+    transition: background 0.2s;
 }
+.submit-btn:hover { background: #0056b3; }
+/* =================== CONTACT SECTION ================= */
 
-/*Responsive*/
-@media(max-width: 768px) {
-    .cards {
-        flex-direction: column;
-        align-items: center;
-    }
-}
 
-/* Footer Section*/
+/* ------------------------ Footer Section ------------------------ */
 .footer {
     padding: 36px;
     background: #333;
@@ -605,4 +984,30 @@ textarea {
     line-height: 1.25rem;
     margin-top: 1rem;
     text-align: center;
+}
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .cards { flex-direction: column; align-items: center; }
+
+    .blog-card.featured { flex-direction: column; }
+    .blog-card.featured .blog-card-img { min-width: unset; }
+
+    .foot-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .blog-grid,
+    .tutorials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-section,
+    .tutorials-section {
+        padding: 24px 16px 40px;
+    }
+
+    .page-hero { padding: 40px 20px 36px; }
 }
