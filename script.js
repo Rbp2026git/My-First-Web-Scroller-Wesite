@@ -34,11 +34,45 @@ navItems.forEach(item => {
         showSection(this.dataset.section);
     });
 });
+/* ============== SECTION SWITCHING (SPA) ends here =============== */
 
+/* ============ Popup - Section ==================== */
+// Popup app-tiles pe click listener
+document.querySelectorAll("[data-section]").forEach(el => {
+    el.addEventListener("click", function (e) {
+        const sec = this.dataset.section;
+        if (sec) {
+            e.preventDefault();
+            showSection(sec);
+            closePopup(); // popup band karo
+        }
+    });
+});
 
-let homeBtn = document.getElementById("homeBtn");
-let notesBtn = document.getElementById("notesBtn");
-let contactBtn = document.getElementById("contactBtn");
+/* ===================== Footer Section ==================== */
+/* Footer links pe bhi section switching */
+document.querySelectorAll(".footer a[data-section]").forEach(link => {
+    link.addEventListener("click", function (e) {
+        e.preventDefault();
+        showSection(this.dataset.section);
+    });
+});
+
+/* Home quick-buttons - Hero ke neeche welcome content */
+document.querySelectorAll(".quick-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+        showSection(this.dataset.section);
+    });
+});
+
+/* =============== Logo click → home =============== */
+document.getElementById("vista").addEventListener("click", () => {
+    showSection("home");
+});
+
+// let homeBtn = document.getElementById("homeBtn");
+// let notesBtn = document.getElementById("notesBtn");
+// let contactBtn = document.getElementById("contactBtn");
 
 //Scroll function
 // function scrollToSection(sectionId){
@@ -60,17 +94,14 @@ let contactBtn = document.getElementById("contactBtn");
 //     scrollToSection("contact");
 // })
 
-/* ========================
-DARK MODE
-======================== */
-let modeBtn = document.getElementById("modeBtn");
+/* ============= DARK MODE =============== */
+const modeBtn = document.getElementById("modeBtn");
 modeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark");
     modeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
 })
 
-
-/*  */
+/* =========== POPUP MENU =============== */
 const menuBtn = document.getElementById("menuBtn");
 const popup = document.getElementById("popup");
 const backdrop = document.getElementById("backdrop");
@@ -97,9 +128,8 @@ document.addEventListener("keydown", (e) =>{
     }
 })
 
-
 /*form this line , we are working on hero section */
-
+/* ==============IMAGE SLIDER (Hero) ============== */
 const slider = document.querySelector(".slider");
 const slides = document.querySelectorAll(".slide");
 const nextBtn = document.querySelector(".next");
@@ -223,4 +253,5 @@ window.addEventListener("resize", () => {
 window.addEventListener("load", () => {
     createDots();
     updateSlider();
+    showSection("home"); // Default: home section
 });
