@@ -198,6 +198,20 @@ prevBtn.addEventListener("click", ()=>{
     resetAutoSlide();
 });
 
+/* ════════════════HOME SECTION — EXTRA JS ═════════════════════ */
+/* Featured Course "Free Join Karen" buttons */
+document.querySelectorAll(".feat-enroll-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+        showSection(this.dataset.section);
+    });
+});
+/* CTA Banner buttons */
+document.querySelectorAll(".cta-primary-btn, .cta-secondary-btn").forEach(btn => {
+    btn.addEventListener("click", function () {
+        showSection(this.dataset.section);
+    });
+});
+
 // ════════════════════════════════════════
 //  TUTORIALS FILTER
 // ════════════════════════════════════════
