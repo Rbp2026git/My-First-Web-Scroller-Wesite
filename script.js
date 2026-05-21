@@ -70,30 +70,6 @@ document.getElementById("vista").addEventListener("click", () => {
     showSection("home");
 });
 
-// let homeBtn = document.getElementById("homeBtn");
-// let notesBtn = document.getElementById("notesBtn");
-// let contactBtn = document.getElementById("contactBtn");
-
-//Scroll function
-// function scrollToSection(sectionId){
-//     document.getElementById(sectionId).scrollIntoView({
-//         behavior: "smooth"
-//     });
-// }
-
-// //Add event listner
-// homeBtn.addEventListener("click", function(){
-//     scrollToSection("home");
-// })
-
-// notesBtn.addEventListener("click", function(){
-//     scrollToSection("notes");
-// })
-
-// contactBtn.addEventListener("click", function(){
-//     scrollToSection("contact");
-// })
-
 /* ============= DARK MODE =============== */
 const modeBtn = document.getElementById("modeBtn");
 modeBtn.addEventListener("click", () => {
@@ -118,7 +94,6 @@ function closePopup() {
     popup.classList.remove('open');
     backdrop.classList.remove('open');
 }
-
 popupClose.addEventListener("click", closePopup);
 backdrop.addEventListener("click", closePopup);
 
@@ -136,9 +111,8 @@ const nextBtn = document.querySelector(".next");
 const prevBtn = document.querySelector(".prev");
 const dotsContainer = document.querySelector(".dots");
 
-
 let index = 0;
-/* HOW MANY SLIDES VISIBLE */
+/* ------------ HOW MANY SLIDES VISIBLE ----------- */
 function getVisibleSlides(){
     return window.innerWidth <= 768 ? 1 : 3;
 }
@@ -174,11 +148,10 @@ function getSlideWidth(){
     const containerWidth = container.clientWidth - 32; //16px padding dono side
     const visible = getVisibleSlides();
     const slideW = (containerWidth - (visible - 1) * 16) / visible;
-
     return slideW + 16; //slide + gap
 }
 
-/* UPDATE SLIDER */
+/* ------------------ UPDATE SLIDER ---------------- */
 function updateSlider(){
 
     let visibleSlides = getVisibleSlides();
@@ -193,55 +166,55 @@ function updateSlider(){
     });
 }
 
-/* NEXT */
+/* --------------- NEXT & PREV button in Slider ----------- */
 function nextSlide(){
 
     let maxIndex = slides.length - getVisibleSlides();
-
     index++;
-
-    if(index > maxIndex){
-       index = 0;
-    }
+    if(index > maxIndex){ index = 0; }
     updateSlider();
 }
-
-/* PREV */
 function prevSlide(){
 
     let maxIndex = slides.length - getVisibleSlides();
-
     index--;
-
-    if(index < 0){
-        index = maxIndex;
-    }
+    if(index < 0){ index = maxIndex; }
     updateSlider();
 }
-
 /*Storing 0f  in variable */
 let autoSlide = setInterval(nextSlide, 3000);
-
-/*reset Auto Slide */
-/*Ye function banao — reset ke liye */
+/* reset Auto Slide = Ye function banao — reset ke liye */
 function resetAutoSlide(){
     clearInterval(autoSlide);
     autoSlide = setInterval(nextSlide, 3000);
 }
-
-/* Button events mein resetAutoSlide call karo */
-/* BUTTON EVENT */
+/* BUTTON EVENT mein resetAutoSlide call karo */
 nextBtn.addEventListener("click", ()=>{
     nextSlide();
     resetAutoSlide();
 });
-
 prevBtn.addEventListener("click", ()=>{
     prevSlide();
     resetAutoSlide();
 });
 
-/* RESPONSIVE */
+// ════════════════════════════════════════
+//  TUTORIALS FILTER
+// ════════════════════════════════════════
+document.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+        document.querySelectorAll(".tutorial-card").forEach(card => {
+            const match = filter === "all" || card.dataset.category === filter;
+            card.style.display = match ? "" : "none";
+        });
+    });
+});
+
+/* ------------------ RESPONSIVE ------------------- */
 window.addEventListener("resize", () => {
      index = 0;
      createDots();

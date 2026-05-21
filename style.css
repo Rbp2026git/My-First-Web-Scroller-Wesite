@@ -1,6 +1,8 @@
 /* -------------- Reset & Variables ------------------*/
 :root {
     --nav-height: 48px;
+    --accent: #4F46E5;
+    --accent-hover: #4338ca;
 }
 /* ------------------ Universal ---------------------- */
 * {
