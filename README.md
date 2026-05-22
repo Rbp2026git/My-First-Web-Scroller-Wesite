@@ -1,112 +1,104 @@
-#PROJECT: COMPLETE WEBSITE (HTML + CSS + JS)
-<br>
-<h3>Features: </h3>
-<p>- Responsive Navbar</p>
-<p>- Hero Section</p>
-<p>- Services Section</p>
-<p>- Contact Form (with validation)</p>
-<p>Dark Mode Toggle</p>
-<p>Author : Raushan Bhai Patel</p>
-
-# 📜 Scroll Vista
-
-A clean, responsive educational web platform featuring an auto-sliding image carousel, handwritten notes showcase, dark mode toggle, and smooth scroll navigation.
-
+# 📚 Scroll Vista
+ 
+A Hindi-first, free educational web platform for students learning web development. Scroll Vista offers handwritten notes, video tutorials, structured courses, blog articles, and upcoming events — all in one place, completely free.
+ 
 ---
-
-## 🚀 Features
-
-- **Auto-Sliding Hero Carousel** — Automatically cycles through slides every 3 seconds with dot indicators and prev/next controls
-- **Responsive Layout** — Carousel shows 3 slides on desktop and 1 slide on mobile (≤768px)
-- **Dark Mode Toggle** — One-click light/dark theme switch via the 🌙 button
-- **Smooth Scroll Navigation** — Nav links (Home, Notes, Contact) scroll smoothly to their sections
-- **Notes Section** — Cards showcasing available handwritten notes (HTML, CSS, JS, Git, NPM)
-- **Contact Form** — Simple form with name, email, and message fields
-- **Footer** — Multi-column footer with Main, Learn, Social Media, Legal, and Support links
-
+ 
+## 🌐 Live Preview
+ 
+> Open `index.html` in any modern browser — no build step, no dependencies. 
 ---
-
-## 📁 Project Structure
-
+ 
+## ✨ Features
+ 
+- **SPA Navigation** — Smooth section switching without page reloads
+- **Image Slider (Hero)** — Auto-advancing carousel with dot navigation, prev/next buttons, and responsive visible-slide count (3 on desktop, 1 on mobile)
+- **Dark Mode** — One-click toggle with full dark theme across all sections
+- **Popup Menu** — Grid-style app launcher with backdrop dismiss and keyboard (Escape) support
+- **Tutorial Filter** — Filter video tutorials by category (HTML, CSS, JS, Git)
+- **Responsive Design** — Mobile-friendly layout that adapts across all screen sizes
+- **Footer Navigation** — Section-linked footer for quick access
+---
+ 
+## 🗂️ Project Structure
+ 
 ```
 scroll-vista/
-│
-├── index.html          # Main HTML structure
-├── style.css           # Styling & responsive design
-├── script.js           # Carousel logic, dark mode, scroll navigation
-│
+├── index.html          # Main HTML — all sections, header, footer
+├── style.css           # All styling, dark mode, responsive rules
+├── script.js           # SPA logic, slider, dark mode, popup, filters
 └── assets/
-    ├── images/         # Slide images (local + picsum fallback)
+    ├── images/         # Hero slider images
     └── icons/          # SVG icons (profile, GitHub, YouTube)
 ```
 
----
-
-## 🛠️ Technologies Used
-
-| Technology | Purpose |
-|------------|---------|
-| HTML5      | Page structure & semantic layout |
-| CSS3       | Styling, grid/flexbox layout, transitions |
-| JavaScript (Vanilla) | Carousel, dark mode, smooth scroll |
-| SVG        | Menu icon & social media icons |
-
----
-
-## ⚙️ How It Works
-
-### 🎠 Image Slider
-
-- Slides are arranged in a flex row; `translateX` moves the strip on each tick.
-- **Auto-slide** runs via `setInterval` (3000ms); manual button clicks call `resetAutoSlide()` to avoid double-speed scrolling.
-- **Dot indicators** are generated dynamically — count = `totalSlides - visibleSlides + 1`.
-- On window resize, `index` resets to `0` and dots are rebuilt to match the new visible count.
-
-### 🌙 Dark Mode
-
-- Toggling adds/removes the `.dark` class on `<body>`.
-- Background and text color are handled entirely via CSS class swap — no JS style manipulation.
-
-### 🔗 Smooth Scroll
-
-- `scrollToSection(id)` calls `scrollIntoView({ behavior: "smooth" })` on the target section.
-- Each nav button has a dedicated `addEventListener("click", ...)` binding.
-
----
-
-## 📦 Setup & Usage
-
-1. **Clone or download** this repository.
-2. Place your own images inside `assets/images/` and update the `src` paths in `index.html` if needed.
-3. Open `index.html` directly in any modern browser — **no build step required**.
-
-```bash
-# Optional: serve locally with VS Code Live Server or any static server
-npx serve .
-```
-
----
-
-## 📱 Responsive Behavior
-
-| Screen Width | Visible Slides | Layout Changes |
+ 
+## 📄 Sections
+ 
+| Section | ID | Description |
 |---|---|---|
-| > 768px | 3 slides at once | Full nav, grid footer |
-| ≤ 768px | 1 slide at once | Cards stack vertically |
-
+| Home | `section-home` | Hero slider, stats strip, featured courses, latest notes, CTA banner |
+| Courses | `section-courses` | Course cards (Web Dev, Python, DSA, React) |
+| Notes | `section-notes` | Handwritten notes cards (HTML, CSS, JS, Git, NPM) |
+| Tutorials | `section-tutorials` | Filterable video tutorial cards |
+| Blog | `section-blog` | Article cards with featured post |
+| Events | `section-events` | Upcoming event list with date badges |
+| Contact | `section-contact` | Contact form (name, email, message) |
 ---
+ 
+## ⚙️ How It Works
+ 
+### Section Switching (SPA)
+All sections are hidden by default (`display: none`). Only the `.active` section is shown. `showSection(id)` swaps the active class and scrolls to top.
+ 
+```js
+function showSection(sectionId) {
+    sections.forEach(sec => sec.classList.remove("active"));
+    document.getElementById("section-" + sectionId).classList.add("active");
+}
+```
+ 
+### Hero Slider
+- Calculates slide width dynamically from container size
+- Shows 3 slides on desktop, 1 on mobile
+- Auto-advances every 3 seconds; resets timer on manual navigation
+- Dots are generated programmatically and update on slide change
+### Dark Mode
+Toggles the `dark` class on `<body>`. All dark-mode styles are scoped to `body.dark` in CSS.
+---
+ 
+## 🚀 Getting Started
+ 
+1. Clone or download the repository
+2. Place your own images inside `assets/images/`
+3. Open `index.html` in a browser
+```bash
+git clone https://github.com/Rbp2026git/scroll-vista.git
+cd scroll-vista
+# Open index.html in browser
+```
+ 
+No npm install, no build tools — pure HTML, CSS, and JavaScript.
+---
+ 
+## 📱 Responsive Breakpoints
+ 
+| Breakpoint | Changes |
+|---|---|
+| `≤ 768px` | 1 visible slide, single-column grids, stacked blog featured card, 2-column footer |
+ 
+## 🛠️ Tech Stack
 
-## 🔗 Social Links
-
+- **HTML5** — Semantic structure
+- **CSS3** — Grid, Flexbox, CSS variables, transitions, dark mode
+- **Vanilla JavaScript** — No frameworks or libraries
+ 
+## 🔗 Social
+ 
 - **GitHub:** [Rbp2026git](https://github.com/Rbp2026git)
-- **YouTube:** [rbpMicrosoft](https://www.youtube.com/@rbpMicrosoft)
-
----
-
-## 📄 License
-
-This project is open source. Feel free to use and modify it for learning purposes.
-
----
-
-> Made in India ❤️
+- **YouTube:** [@rbpMicrosoft](https://www.youtube.com/@rbpMicrosoft)
+ 
+## 📝 License
+ 
+Free to use for learning purposes. Made with ❤️ in India.
+ 
