@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scroll Vista learning platform">
     <title>Scroll Vista</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -14,7 +15,7 @@
         <div class="upperNav">
             <div class="logo">
                 <div class="menu-icon" id="menuIcon">
-                    <button class="menu-btn" id="menuBtn" aria-level="services menu">
+                    <button class="menu-btn" id="menuBtn" aria-label="services menu">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <!-- Row 1 -->
                             <circle cx="5" cy="5" r="1.5" />
@@ -39,7 +40,7 @@
             </div>
             <div class="search">
                 <div class="search-bar">
-                    <input placeholder="search..." readonly>
+                    <input placeholder="search..." >
                     <span class="search-icon">🔍</span>
                 </div>
             </div>
@@ -63,7 +64,7 @@
 
                     <div class="popup-header-bar">
                         <span class="popup-title-text">Explore</span>
-                        <button class="popup-close" id="popupClose">X</button>
+                        <button type="button" class="popup-close" id="popupClose">X</button>
                     </div>
 
                     <div class="apps-grid">
@@ -138,8 +139,8 @@
             <div id="hero" class="hero">
                 <div class="slider-container">
                     <!-- BUTTONS -->
-                    <button class="btn prev">&#10094;</button>
-                    <button class="btn next">&#10095;</button>
+                    <button type="button" class="btn prev">&#10094;</button>
+                    <button type="button" class="btn next">&#10095;</button>
                     <!--Slider-->
                     <div class="slider">
                         <div class="slide"><img src="assets\images\jlab-srls-y2WomcHz1wQ-unsplash.jpg" alt="slide1"></div>
@@ -160,9 +161,9 @@
                 <h2>Welcome to Scroll Vista 👋</h2>
                 <p>Handwritten notes, tutorials, courses aur bahut kuch — sab ek jagah.</p>
                 <div class="home-quick-links">
-                    <button class="quick-btn" data-section="notes">📝 Notes Dekhen</button>
-                    <button class="quick-btn" data-section="courses">🎓 Courses</button>
-                    <button class="quick-btn" data-section="tutorials">▶️ Tutorials</button>
+                    <button type="button" class="quick-btn" data-section="notes">📝 Notes Dekhen</button>
+                    <button type="button" class="quick-btn" data-section="courses">🎓 Courses</button>
+                    <button type="button" class="quick-btn" data-section="tutorials">▶️ Tutorials</button>
                 </div>
             </div>
             <!-- ── Stats Strip ── -->
