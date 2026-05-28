@@ -1,0 +1,12 @@
+/*-------------------- Body ----------------------- */
+body {
+    font-family: var(--font-main);
+    background: #f0f0f5;
+    color: var(--text-primary);
+    transition: background 0.3s, color 0.3s;
+}
+
+.dark {
+    background: var(--bg-darkmode);
+    color: var(--color-darkmode);
+}

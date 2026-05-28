@@ -1,0 +1,36 @@
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+
+@media (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .blog-card.featured {
+        flex-direction: column;
+    }
+
+    .blog-card.featured .blog-card-img {
+        min-width: unset;
+    }
+
+    .foot-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .blog-grid,
+    .tutorials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-section,
+    .tutorials-section {
+        padding: 24px 16px 40px;
+    }
+
+    .page-hero {
+        padding: 40px 20px 36px;
+    }
+}
