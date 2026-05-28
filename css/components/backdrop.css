@@ -1,0 +1,11 @@
+/* ── ------- BACKDROP ----------- ── */
+.backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 98;
+    display: none;
+}
+
+.backdrop.open {
+    display: block;
+}
