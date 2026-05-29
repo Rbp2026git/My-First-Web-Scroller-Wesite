@@ -1,0 +1,167 @@
+/* ════════════════════════TUTORIALS SECTION ═══════════════════════ */
+.tutorials-section {
+    padding: 40px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Filter buttons */
+.tutorials-filter {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.filter-btn {
+    padding: 7px 18px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 24px;
+    background: transparent;
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.18s ease;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+
+body.dark .filter-btn {
+    border-color: #374151;
+    color: #9ca3af;
+}
+
+body.dark .filter-btn.active {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Tutorial grid */
+.tutorials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+.tutorial-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tutorial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.14);
+}
+
+body.dark .tutorial-card {
+    background: #1e1e2e;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tutorial-thumb {
+    height: 160px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tut-play-icon {
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.tutorial-card:hover .tut-play-icon {
+    transform: scale(1.15);
+}
+
+.tut-duration {
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 11px;
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.tutorial-info {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.tut-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: fit-content;
+}
+
+.tut-badge.html {
+    background: #fff7ed;
+    color: #f97316;
+}
+
+.tut-badge.css {
+    background: #eff6ff;
+    color: #3b82f6;
+}
+
+.tut-badge.js {
+    background: #fefce8;
+    color: #ca8a04;
+}
+
+.tut-badge.git {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.tutorial-info h3 {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #111;
+}
+
+body.dark .tutorial-info h3 {
+    color: #f3f4f6;
+}
+
+.tutorial-info p {
+    font-size: 13px;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+.tut-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 4px;
+}

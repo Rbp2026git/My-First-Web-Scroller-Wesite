@@ -1,0 +1,45 @@
+/* =================== CONTACT SECTION ================= */
+.contact-inner {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input,
+textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: white;
+    color: #333;
+}
+
+body.dark input,
+body.dark textarea {
+    background: #1e1e2e;
+    color: #eee;
+    border-color: #374151;
+}
+
+#des {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 8px;
+    transition: background 0.2s;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
