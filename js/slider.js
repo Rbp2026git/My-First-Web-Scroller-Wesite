@@ -160,6 +160,7 @@ function init() {
 document.querySelector('.next-btn').addEventListener('click', next);
 document.querySelector('.prev-btn').addEventListener('click', prev);
 
+
 /* autoplay */
 let auto = setInterval(next, 3500);
 const sec = document.querySelector('.slider-section');

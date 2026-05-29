@@ -105,98 +105,98 @@ document.addEventListener("keydown", (e) =>{
 
 /*form this line , we are working on hero section */
 /* ==============IMAGE SLIDER (Hero) ============== */
-const slider = document.querySelector(".slider");
-const slides = document.querySelectorAll(".slide");
-const nextBtn = document.querySelector(".next");
-const prevBtn = document.querySelector(".prev");
-const dotsContainer = document.querySelector(".dots");
+// const slider = document.querySelector(".slider");
+// const slides = document.querySelectorAll(".slide");
+// const nextBtn = document.querySelector(".next");
+// const prevBtn = document.querySelector(".prev");
+// const dotsContainer = document.querySelector(".dots");
 
-let index = 0;
+// let index = 0;
 /* ------------ HOW MANY SLIDES VISIBLE ----------- */
-function getVisibleSlides(){
-    return window.innerWidth <= 768 ? 1 : 3;
-}
+// function getVisibleSlides(){
+//     return window.innerWidth <= 768 ? 1 : 3;
+// }
 
 /*Create DOTS */
-function createDots(){
-    dotsContainer.innerHTML = "";
+// function createDots(){
+//     dotsContainer.innerHTML = "";
 
-    let totalDots = slides.length - getVisibleSlides() + 1;
+//     let totalDots = slides.length - getVisibleSlides() + 1;
 
-    for(let i = 0; i < totalDots; i++){
+//     for(let i = 0; i < totalDots; i++){
 
-        const dot = document.createElement("div");
+//         const dot = document.createElement("div");
 
-        dot.classList.add("dot");
+//         dot.classList.add("dot");
 
-        if(i === index){
-            dot.classList.add("active");
-        }
-        dot.addEventListener("click", () => {
-            index = i;
-            updateSlider();
-            resetAutoSlide();
-        });
-        dotsContainer.appendChild(dot);
-    }
-}
+//         if(i === index){
+//             dot.classList.add("active");
+//         }
+//         dot.addEventListener("click", () => {
+//             index = i;
+//             updateSlider();
+//             resetAutoSlide();
+//         });
+//         dotsContainer.appendChild(dot);
+//     }
+// }
 
 /* Calculate from Container Width */
-function getSlideWidth(){
+// function getSlideWidth(){
 
-    const container = document.querySelector(".slider-container");
-    const containerWidth = container.clientWidth - 32; //16px padding dono side
-    const visible = getVisibleSlides();
-    const slideW = (containerWidth - (visible - 1) * 16) / visible;
-    return slideW + 16; //slide + gap
-}
+//     const container = document.querySelector(".slider-container");
+//     const containerWidth = container.clientWidth - 32; //16px padding dono side
+//     const visible = getVisibleSlides();
+//     const slideW = (containerWidth - (visible - 1) * 16) / visible;
+//     return slideW + 16; //slide + gap
+// }
 
 /* ------------------ UPDATE SLIDER ---------------- */
-function updateSlider(){
+// function updateSlider(){
 
-    let visibleSlides = getVisibleSlides();
+//     let visibleSlides = getVisibleSlides();
 
-    let slideWidth = getSlideWidth();
-    // let slideWidth = slides[0].offsetWidth + 16; // older
+//     let slideWidth = getSlideWidth();
+//     // let slideWidth = slides[0].offsetWidth + 16; // older
 
-    slider.style.transform = `translateX(-${index * slideWidth}px)`;
+//     slider.style.transform = `translateX(-${index * slideWidth}px)`;
 
-    document.querySelectorAll(".dot").forEach((dot, i) => {
-        dot.classList.toggle("active", i === index);
-    });
-}
+//     document.querySelectorAll(".dot").forEach((dot, i) => {
+//         dot.classList.toggle("active", i === index);
+//     });
+// }
 
 /* --------------- NEXT & PREV button in Slider ----------- */
-function nextSlide(){
+// function nextSlide(){
 
-    let maxIndex = slides.length - getVisibleSlides();
-    index++;
-    if(index > maxIndex){ index = 0; }
-    updateSlider();
-}
-function prevSlide(){
+//     let maxIndex = slides.length - getVisibleSlides();
+//     index++;
+//     if(index > maxIndex){ index = 0; }
+//     updateSlider();
+// }
+// function prevSlide(){
 
-    let maxIndex = slides.length - getVisibleSlides();
-    index--;
-    if(index < 0){ index = maxIndex; }
-    updateSlider();
-}
+//     let maxIndex = slides.length - getVisibleSlides();
+//     index--;
+//     if(index < 0){ index = maxIndex; }
+//     updateSlider();
+// }
 /*Storing 0f  in variable */
-let autoSlide = setInterval(nextSlide, 3000);
+//let autoSlide = setInterval(nextSlide, 3000);
 /* reset Auto Slide = Ye function banao — reset ke liye */
-function resetAutoSlide(){
-    clearInterval(autoSlide);
-    autoSlide = setInterval(nextSlide, 3000);
-}
-/* BUTTON EVENT mein resetAutoSlide call karo */
-nextBtn.addEventListener("click", ()=>{
-    nextSlide();
-    resetAutoSlide();
-});
-prevBtn.addEventListener("click", ()=>{
-    prevSlide();
-    resetAutoSlide();
-});
+// function resetAutoSlide(){
+//     clearInterval(autoSlide);
+//     autoSlide = setInterval(nextSlide, 3000);
+// }
+// /* BUTTON EVENT mein resetAutoSlide call karo */
+// nextBtn.addEventListener("click", ()=>{
+//     nextSlide();
+//     resetAutoSlide();
+// });
+// prevBtn.addEventListener("click", ()=>{
+//     prevSlide();
+//     resetAutoSlide();
+// });
 
 /* ════════════════HOME SECTION — EXTRA JS ═════════════════════ */
 /* Featured Course "Free Join Karen" buttons */
@@ -229,16 +229,16 @@ document.querySelectorAll(".filter-btn").forEach(btn => {
 });
 
 /* ------------------ RESPONSIVE ------------------- */
-window.addEventListener("resize", () => {
-     index = 0;
-     createDots();
-     updateSlider();
-});
+// window.addEventListener("resize", () => {
+//      index = 0;
+//      createDots();
+//      updateSlider();
+// });
 
 /* INITIAL */
 /* window.onload → ensure karta hai ki layout complete ho tab slider initialize ho */
 window.addEventListener("load", () => {
-    createDots();
-    updateSlider();
+    // createDots();
+    // updateSlider();
     showSection("home"); // Default: home section
 });

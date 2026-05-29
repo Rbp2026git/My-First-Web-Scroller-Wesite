@@ -2,6 +2,7 @@
 
 /* Sabhi sections hidden by default */
 .page-section {
+    padding: 0 4px;
     display: none;
     animation: fadeIn 0.3s ease;
 }
