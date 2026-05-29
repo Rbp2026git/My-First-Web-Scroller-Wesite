@@ -1,8 +1,6 @@
 .hero {
-    /* background: var(--bg); */
     background: linear-gradient(to bottom, rgb(198, 227, 235), rgb(235, 240, 241));
     /* min-height: 100vh; */
-    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,12 +35,11 @@
     position: relative;
     aspect-ratio: 16/9;
     cursor: pointer;
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5); */
+    transition: box-shadow 0.3s ease;
 }
 
 .slide-card:hover {
-    transform: translateY(-6px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
@@ -147,15 +144,15 @@
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: rgba(232, 200, 125, 0.22);
+    background: rgba(45, 22, 250, 0.22);
     border: 1.5px solid rgba(232, 200, 125, 0.4);
     cursor: pointer;
     transition: background 0.3s, width 0.3s, border-radius 0.3s;
 }
 
 .dot.active {
-    background: #e8c87d;
-    border-color: #e8c87d;
+    background: #041cf3;
+    border-color: #0b07eb;
     width: 28px;
     border-radius: 5px;
 }
@@ -194,117 +191,3 @@
         font-size: 1rem;
     }
 }
-
-
-
-
-
-
-
-
-
-
-/* -----------Hero ------------*/
-/* .hero {
-    width: 100%;
-    height: 45vh;
-    min-height: 286.44px;
-    padding: 0 4px;
-    border-top: 0.5px solid rgba(0, 0, 0, 0.3);
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.3);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to bottom, rgb(198, 227, 235), rgb(235, 240, 241));
-    color: white;
-} */
-
-/* -------Slider Container ------------ */
-/* .slider-container {
-    width: 100%;
-    height: 100%;
-    padding: 16px;
-    position: relative;
-    overflow: hidden;
-} */
-
-/* ------------ BUTTON inside Slider-container (Hero ) ----------  */
-/* .btn {
-    position: absolute;
-    top: 50%;
-
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 50%;
-
-    background: white;
-    color: #333;
-    font-size: 22px;
-
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    z-index: 10;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.prev {
-    left: 15px;
-}
-
-.next {
-    right: 15px;
-} */
-
-/* Inner Container */
-/* .slider {
-    display: flex;
-    gap: 16px;
-    transition: transform 0.5s ease;
-} */
-
-/* ------ EACH SLIDE -------- */
-/* .slide {
-    min-width: calc((100% - 32px) / 3);
-    height: 230px;
-    border-radius: 12px;
-    overflow: hidden;
-    background: white;
-} */
-
-/*---------- Slide image --------*/
-/* .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-} */
-
-/* -------- DOTS ---------*/
-/* .dots {
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-} */
-
-/*------ EACH DOT ------ */
-/* .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: #bdbdbd;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.dot.active {
-    background: #2874f0;
-    width: 24px;
-    border-radius: 20px;
-}  */
