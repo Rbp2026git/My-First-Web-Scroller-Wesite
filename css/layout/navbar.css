@@ -244,6 +244,7 @@ body.dark #profile:hover { background: #374151; border-color: rgba(255, 255, 255
     height: var(--nav-height);
     background: var(--bg);
 }
+body.dark .lowerNav { background: var(--bg-darkmode); }
 
 .lowerNav-buttons {
     padding: 0 4px;
@@ -263,6 +264,7 @@ body.dark #profile:hover { background: #374151; border-color: rgba(255, 255, 255
     cursor: pointer;
 
 }
+body.dark .nav-item {  background:rgba(255, 255, 255, 0.28); color: #f3f4f6; }
 
 .nav-item:hover {
     border-color: rgba(0, 0, 0, 0.1);
@@ -275,15 +277,16 @@ body.dark #profile:hover { background: #374151; border-color: rgba(255, 255, 255
     color: white;
     border-color: transparent;
 }
+body.dark .nav-item.active-nav {
+    background-color: #4338ca;
+    color: white;
+    border-color: transparent;
+}
 
 .nav-item.nav-item.active-nav:hover {
     background-color: #4338ca;
 }
-
-body.dark .nav-item:hover {
-    background-color: #333;
-    color: white;
-}
+body.dark .nav-item:hover { background-color: #333; color: white; }
 
 #modeBtn {
     margin-left: auto;
