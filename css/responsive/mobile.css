@@ -34,3 +34,20 @@
         padding: 40px 20px 36px;
     }
 }
+/* ----- Media Quarry for Slider in the hero section of HOME ------*/
+@media (max-width: 768px) {
+    .slide-card {
+        aspect-ratio: 16/9;
+    }
+    .prev-btn {
+        left: -8px;
+    }
+    .next-btn {
+        right: -8px;
+    }
+    .nav-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}

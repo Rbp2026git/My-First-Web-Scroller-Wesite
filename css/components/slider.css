@@ -161,33 +161,3 @@
     background: rgba(232, 200, 125, 0.5);
 }
 
-@media (max-width: 900px) {
-    .prev-btn {
-        left: -14px;
-    }
-
-    .next-btn {
-        right: -14px;
-    }
-}
-
-@media (max-width: 560px) {
-    .slide-card {
-        /* aspect-ratio: 3/4; */
-        aspect-ratio: 16/9;
-    }
-
-    .prev-btn {
-        left: -12px;
-    }
-
-    .next-btn {
-        right: -12px;
-    }
-
-    .nav-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
-    }
-}
