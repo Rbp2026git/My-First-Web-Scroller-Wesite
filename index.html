@@ -84,10 +84,16 @@
             </div>
             <!-- login, signuo, profile -->
             <div class="upperNav-right">
-                <a class="btn-login desktop-only" href="#">Login</a>
-                <a class="btn-signup desktop-only" href="#">
+                <!-- Mobile Search toggle  (iska styling global.css me hai )-->
+                <button class="search-toggle-btn" id="searchToggle" aria-label="search">
+                    <i class="ti ti-search"></i>
+                </button>
+                <a class="btn-login" href="#">
+                    <span class="login-text">Login</span>
+                </a>
+                <a class="btn-signup" href="#">
                     <i class="ti ti-user-plus" aria-hidden="true"></i>
-                    SignUp
+                    <span class="signup-text">SignUp</span>
                 </a>
                 <div class="upperNav-divider" aria-hidden="true"></div>
                 <div id="profile">
@@ -145,6 +151,14 @@
                 </div> <!--popup-card END-->
             </div> <!--Popup-wrap END-->
         </div> <!--UPPERNAV END-->
+
+        <!-- Mobile Search Bar -->
+        <div class="mobile-search-bar" id="mobileSearch">
+            <input type="text" placeholder="search, notes, courses...">
+            <button class="mobile-search-close" id="searchClose">
+                <i class="ti ti-x"></i>
+            </button>
+        </div>
 
         <div class="lowerNav">
             <div class="lowerNav-buttons">

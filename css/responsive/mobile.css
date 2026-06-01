@@ -1,9 +1,63 @@
-/* ------- Responsive of upperNav  ----- */
 @media (max-width: 768px) {
-}
-    
-/* ------- Responsive of lowerNav  ----- */
-@media (max-width: 768px) {
+
+    /* ------- Responsive of upperNav  ----- */
+    .upperNav-center { display: none; } /* Hide search bar on mobile */
+    .btn-login, .btn-signup { display: none; } /* Hide login and signup buttons on mobile */
+    .upperNav-divider { display: none; }
+    /* Search toggle button dikhao */
+    .search-toggle-btn {
+        width: 36px;
+        height: 36px;
+        border: 0.25px solid var(--border-medium);
+        border-radius: var(--radius-md);
+        background: transparent;
+        cursor: pointer;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    .search-toggle-btn .ti-search { font-size: 1.25rem; opacity: 0.7; }
+
+    /*  Mobile search bar ( collapsed by default ) => Search bar dikhao jab toggle ho */
+    .mobile-search-bar {
+        display: none; /* Hidden by default */
+        padding: 0 8px 6px;
+        animation: fadeIn 0.2s ease;
+    }
+    .mobile-search-bar.open {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+    }
+    .mobile-search-bar input {
+        flex: 1;
+        height: 36px;
+        padding: 0 12px;
+        border: 0.25px solid var(--border-light);
+        border-radius: var(--radius-md);
+        background: var(--bg-secondary);
+        font-size: 14px;
+        outline: none;
+        font-family: var(--font-main);
+        color: var(--text-primary);
+    }
+    body.dark .mobile-search-bar input { background: var(--bg-darkmode-hover);
+        color: #f3f4f6;
+    }
+    .mobile-search-close {
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: var(--text-secondary);
+        font-size: 18px;
+    }
+    /* ------- Responsive of upperNav  ends HERE ----- */
+
+    /* ------- Responsive of lowerNav  ----- */
     .lowerNav-buttons {
         -webkit-overflow-scrolling: touch;
         overflow-x: auto;
@@ -16,8 +70,7 @@
         flex-shrink: 0;
     }
 }
-
-
+    
 /* ═══════════════════════════════════════
    RESPONSIVE
 ═══════════════════════════════════════ */

@@ -1,5 +1,30 @@
-/* ------- Responsive of lowerNav  ----- */
 @media (max-width: 1024px) {
+
+    /* ------- Responsive of upperNav  ----- */
+    /* .upperNav-center { max-width: 200px; } */
+    /* Mobile Search toggle  */
+    
+    /*Login : sirf icon */
+    .btn-login .login-text { display: none; }
+    .btn-login {
+        width: 36px;
+        padding: 0;
+        justify-content: center;
+    }
+    .btn-login::before {
+        font-family: "tabler-icons";
+        content: "\eb7b"; /* yi-login */
+        font-size: 18px;
+    }
+    /* signUp : sirf icon*/
+    .btn-signup .signup-text { display: none; }
+    .btn-signup {
+        padding: 0 10px;
+    }
+    /* ------- Responsive of upperNav end HERE ----- */
+
+
+    /* ------- Responsive of lowerNav  ----- */
     .lowerNav-buttons {
         -webkit-overflow-scrolling: touch;
         overflow-x: auto;

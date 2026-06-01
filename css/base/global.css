@@ -10,3 +10,11 @@ body {
     background: var(--bg-darkmode);
     color: var(--color-darkmode);
 }
+
+.search-toggle-btn {
+    display: none;
+}
+/* Mobile Search Bar */
+.mobile-search-bar {
+    display: none;
+}

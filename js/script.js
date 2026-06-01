@@ -1,3 +1,21 @@
+/* ── Mobile Search Toggle ── */
+const searchToggle = document.getElementById('searchToggle');
+const mobileSearch = document.getElementById('mobileSearch');
+const searchClose = document.getElementById('searchClose');
+
+if (searchToggle) {
+  searchToggle.addEventListener('click', () => {
+    mobileSearch.classList.toggle('open');
+    if (mobileSearch.classList.contains('open')) {
+      mobileSearch.querySelector('input').focus();
+    }
+  });
+  searchClose.addEventListener('click', () => {
+    mobileSearch.classList.remove('open');
+  });
+}
+
+
 /* ============== SECTION SWITCHING (SPA) =============== */
 
 // Sabhi sections ko ek object mein map karo
