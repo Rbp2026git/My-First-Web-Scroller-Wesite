@@ -1,9 +1,31 @@
+/* ------- Responsive of lowerNav  ----- */
+@media (max-width: 1024px) {
+    .lowerNav-buttons {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: auto;
+        scrollbar-width: none;  /* Firefox */
+    }
+    .lowerNav-buttons::-webkit-scrollbar {
+        display: none;  /* Chrome, Safari, and Opera */
+    }
+    .lowerNav-buttons .nav-btn {
+        flex-shrink: 0;
+    }
+}
+
 @media (max-width: 1024px) {
     .prev-btn {
         left: -8px;
     }
-
     .next-btn {
         right: -8px;
+    }
+}
+
+ /* --- ye sirf footer ko responsive bana rha hai in tablet ---- */
+@media (max-width: 1024px) {
+    .foot-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
     }
 }
