@@ -6,11 +6,8 @@
 }
 .foot-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    column-gap: 3rem;
-    row-gap: 1.5rem;
-
     border-bottom: 0.5px solid rgba(250, 250, 250, 0.10);
 }
 

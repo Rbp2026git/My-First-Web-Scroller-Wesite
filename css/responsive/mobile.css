@@ -69,6 +69,13 @@
     .lowerNav-buttons .nav-btn {
         flex-shrink: 0;
     }
+    /* ------- Responsive of lowerNav ends HERE ----- */
+
+    /* ------- Responsive of FOOTER  ----- */
+    .foot-container {
+        justify-content: center;
+        column-gap: 3rem;
+    }
 }
     
 /* ═══════════════════════════════════════
