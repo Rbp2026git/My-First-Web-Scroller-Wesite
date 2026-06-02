@@ -1,22 +1,27 @@
 /* ------------------------ Footer Section ------------------------ */
 .footer {
-    padding: 36px;
+    padding: 16px;
     background: #333;
     color: #ccc;
 }
-
 .foot-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 3rem;
+    row-gap: 1.5rem;
+
+    border-bottom: 0.5px solid rgba(250, 250, 250, 0.10);
 }
 
-.footer-container-grid-box h3 {
+.footer-container-flex-box h3 {
     height: 24px;
     text-align: center;
     color: white;
     margin-bottom: 1rem;
+
+    display: flex;
+    justify-content: flex-start;
 }
 
 .main-footer-div,
@@ -26,7 +31,8 @@
 .support-footer-div {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    align-items: flex-start;
+    gap: 4px;
 }
 
 .main-footer-div a,
