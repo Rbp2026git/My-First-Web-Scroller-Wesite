@@ -287,17 +287,3 @@ body.dark .nav-item.active-nav {
     background-color: #4338ca;
 }
 body.dark .nav-item:hover { background-color: #333; color: white; }
-
-#modeBtn {
-    margin-left: auto;
-    font-size: 16px;
-    border: 0.25px solid rgba(0, 0, 0, 0.12);
-    border-radius: 8px;
-    padding: 6px 10px;
-    cursor: pointer;
-}
-
-body.dark #modeBtn {
-    background-color: #333;
-    border: o.25px solid #1a1a1a;
-}

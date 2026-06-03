@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css\layout\footer.css">
     <!--POPUP-->
     <link rel="stylesheet" href="css\components\popup.css">
+    <!--Profile Popup-->
+    <link rel="stylesheet" href="css\components\profile_popup.css">
     <!--BACKDROP-->
     <link rel="stylesheet" href="css\components\backdrop.css">
     <!--Slider-->
@@ -38,7 +40,7 @@
     <link rel="stylesheet" href="css\responsive\mobile.css">
     <!-- TABLET RESPONSIVE -->
     <link rel="stylesheet" href="css\responsive\tablet.css">
-    
+
     <!--Google Material Symbols for search icon-->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
@@ -150,6 +152,94 @@
 
                 </div> <!--popup-card END-->
             </div> <!--Popup-wrap END-->
+
+            <!-- ================== Profile Popup ================= -->
+            <div class="profile-popup-wrap" id="profilePopup">
+                <div class="profile-popup-card">
+
+                    <!-- Header -->
+                    <div class="profile-popup-header">
+                        <div class="prof-avatar-lg" id="profAvatarLg" title="Photo change karein" tabindex="0"
+                            role="button">
+                            RB
+                            <div class="prof-avatar-overlay"><i class="ti ti-camera"></i></div>
+                            <input type="file" accept="image/*" id="profPhotoInput" style="display:none">
+                        </div>
+                        <div class="prof-username" id="profDisplayName">rbpmicrosoft</div>
+                        <div class="prof-email" id="profDisplayEmail">rbpmicrosoft@gmail.com</div>
+                    </div>
+
+                    <!-- Menu Items -->
+                    <div class="profile-menu-list">
+                        <div class="profile-menu-item" id="profOpenProfile">
+                            <i class="ti ti-user-circle"></i>
+                            <span>Profile</span>
+                            <i class="ti ti-chevron-right prof-chevron"></i>
+                        </div>
+                        <div class="profile-menu-item">
+                            <i class="ti ti-settings"></i>
+                            <span>Settings</span>
+                            <i class="ti ti-chevron-right prof-chevron"></i>
+                        </div>
+                        <div class="profile-menu-divider"></div>
+                        <div class="profile-menu-item">
+                            <i class="ti ti-file-description"></i>
+                            <span>Terms &amp; Conditions</span>
+                            <i class="ti ti-chevron-right prof-chevron"></i>
+                        </div>
+                        <div class="profile-menu-divider"></div>
+                        <!-- Dark Mode Toggle -->
+                        <div class="profile-menu-item prof-toggle-row" id="profDarkToggle">
+                            <i class="ti ti-moon" id="profDarkIcon"></i>
+                            <span>Dark mode</span>
+                            <div class="prof-toggle-track" id="profToggleTrack">
+                                <div class="prof-toggle-thumb" id="profToggleThumb">🌙</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prof-logout-btn" id="profLogoutBtn">
+                        <i class="ti ti-logout"></i>
+                        <span>Logout</span>
+                    </div>
+
+                    <!-- Profile Edit Panel -->
+                    <div class="prof-edit-panel" id="profEditPanel">
+                        <div class="prof-panel-header">
+                            <button class="prof-panel-back" id="profPanelBack"><i class="ti ti-arrow-left"></i></button>
+                            <span class="prof-panel-title">My Profile</span>
+                        </div>
+                        <div class="prof-panel-body">
+                            <div class="prof-field-group">
+                                <div class="prof-field-label">Full name</div>
+                                <input class="prof-field-input" id="profFieldName" type="text" value="Rambabu Prasad"
+                                    placeholder="Full name">
+                            </div>
+                            <div class="prof-field-group">
+                                <div class="prof-field-label">Phone number</div>
+                                <input class="prof-field-input" id="profFieldPhone" type="tel" value="+91 98765 43210"
+                                    placeholder="Phone number">
+                            </div>
+                            <div class="prof-field-group">
+                                <div class="prof-field-label">Email</div>
+                                <input class="prof-field-input" id="profFieldEmail" type="email"
+                                    value="rbpmicrosoft@gmail.com" placeholder="Email">
+                            </div>
+                            <div class="prof-field-group">
+                                <div class="prof-field-label">Age</div>
+                                <input class="prof-field-input" id="profFieldAge" type="number" value="26" min="1"
+                                    max="120" placeholder="Age" style="width:90px">
+                            </div>
+                            <div class="prof-saved-msg" id="profSavedMsg">✓ Profile saved!</div>
+                        </div>
+                        <div class="prof-panel-footer">
+                            <button class="prof-btn-discard" id="profDiscardBtn">Discard</button>
+                            <button class="prof-btn-save" id="profSaveBtn">Save</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!--Profille popup end here    -->
         </div> <!--UPPERNAV END-->
 
         <!-- Mobile Search Bar -->
@@ -170,8 +260,6 @@
                 <button id="blogBtn" class="nav-item" data-section="blog">Blog</button>
                 <button id="events" class="nav-item" data-section="events">Events</button>
                 <button id="contactBtn" class="nav-item" data-section="contact">Contact</button>
-
-                <button id="modeBtn">🌙</button>
             </div>
         </div>
     </header>
@@ -788,6 +876,8 @@
     <script src="js\script.js"></script>
     <!-- SLIDER-->
     <script src="js\slider.js"></script>
+    <!-- Profile POPUP -->
+    <script src="js\profile_popup.js"></script>
 </body>
 
 </html>

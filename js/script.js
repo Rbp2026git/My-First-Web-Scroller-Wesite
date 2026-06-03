@@ -88,13 +88,6 @@ document.getElementById("vista").addEventListener("click", () => {
     showSection("home");
 });
 
-/* ============= DARK MODE =============== */
-const modeBtn = document.getElementById("modeBtn");
-modeBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-    modeBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
-})
-
 /* =========== POPUP MENU =============== */
 const menuBtn = document.getElementById("menuBtn");
 const popup = document.getElementById("popup");
