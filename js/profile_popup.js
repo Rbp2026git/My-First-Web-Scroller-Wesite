@@ -2,31 +2,31 @@
    PROFILE POPUP
 ═══════════════════════════════════════ */
 (function () {
-    const profileBtn    = document.getElementById('profile');
-    const profPopup     = document.getElementById('profilePopup');
-    const profPhotoInput= document.getElementById('profPhotoInput');
-    const profAvatarLg  = document.getElementById('profAvatarLg');
+    const profileBtn = document.getElementById('profile');
+    const profPopup = document.getElementById('profilePopup');
+    const profPhotoInput = document.getElementById('profPhotoInput');
+    const profAvatarLg = document.getElementById('profAvatarLg');
     const profAvatarImg = document.getElementById('profileAvatarImg');
     const profDisplayName = document.getElementById('profDisplayName');
-    const profDisplayEmail= document.getElementById('profDisplayEmail');
+    const profDisplayEmail = document.getElementById('profDisplayEmail');
     const profOpenProfile = document.getElementById('profOpenProfile');
-    const profEditPanel   = document.getElementById('profEditPanel');
-    const profPanelBack   = document.getElementById('profPanelBack');
-    const profSaveBtn     = document.getElementById('profSaveBtn');
-    const profDiscardBtn  = document.getElementById('profDiscardBtn');
-    const profSavedMsg    = document.getElementById('profSavedMsg');
-    const profDarkToggle  = document.getElementById('profDarkToggle');
+    const profEditPanel = document.getElementById('profEditPanel');
+    const profPanelBack = document.getElementById('profPanelBack');
+    const profSaveBtn = document.getElementById('profSaveBtn');
+    const profDiscardBtn = document.getElementById('profDiscardBtn');
+    const profSavedMsg = document.getElementById('profSavedMsg');
+    const profDarkToggle = document.getElementById('profDarkToggle');
     const profToggleTrack = document.getElementById('profToggleTrack');
     const profToggleThumb = document.getElementById('profToggleThumb');
-    const profDarkIcon    = document.getElementById('profDarkIcon');
-    const profLogoutBtn   = document.getElementById('profLogoutBtn');
+    const profDarkIcon = document.getElementById('profDarkIcon');
+    const profLogoutBtn = document.getElementById('profLogoutBtn');
 
     let profPhotoSrc = null;
     let savedData = {
-        name : 'Rambabu Prasad',
+        name: 'Rambabu Prasad',
         phone: '+91 98765 43210',
         email: 'rbpmicrosoft@gmail.com',
-        age  : '26'
+        age: '26'
     };
 
     /* Open / close popup */
@@ -52,14 +52,21 @@
         const reader = new FileReader();
         reader.onload = ev => {
             profPhotoSrc = ev.target.result;
-            // Large avatar
+
+            // 1. Popup ke andar bada avatar update karo
             let img1 = profAvatarLg.querySelector('img');
             if (!img1) { img1 = document.createElement('img'); profAvatarLg.appendChild(img1); }
             img1.src = profPhotoSrc;
             profAvatarLg.childNodes.forEach(n => { if (n.nodeType === 3) n.textContent = ''; });
-            // Navbar small avatar
-            profAvatarImg.src = profPhotoSrc;
-            profAvatarImg.style.borderRadius = '50%';
+
+            // 2. Navbar #profile ka SVG hatao, photo dikhao
+            const profileDiv = document.getElementById('profile');
+            profileDiv.innerHTML = '';
+            const navImg = document.createElement('img');
+            navImg.src = profPhotoSrc;
+            navImg.alt = 'profile photo';
+            navImg.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:50%;';
+            profileDiv.appendChild(navImg);
         };
         reader.readAsDataURL(file);
     });
@@ -71,15 +78,15 @@
     /* Save */
     profSaveBtn.addEventListener('click', () => {
         savedData = {
-            name : document.getElementById('profFieldName').value.trim(),
+            name: document.getElementById('profFieldName').value.trim(),
             phone: document.getElementById('profFieldPhone').value.trim(),
             email: document.getElementById('profFieldEmail').value.trim(),
-            age  : document.getElementById('profFieldAge').value.trim()
+            age: document.getElementById('profFieldAge').value.trim()
         };
-        profDisplayName.textContent  = savedData.name  || 'User';
+        profDisplayName.textContent = savedData.name || 'User';
         profDisplayEmail.textContent = savedData.email || '';
         if (!profPhotoSrc) {
-            const initials = savedData.name.split(' ').map(w => w[0]||'').join('').toUpperCase().slice(0,2)||'U';
+            const initials = savedData.name.split(' ').map(w => w[0] || '').join('').toUpperCase().slice(0, 2) || 'U';
             const overlay = profAvatarLg.querySelector('.prof-avatar-overlay');
             profAvatarLg.textContent = '';
             profAvatarLg.appendChild(document.createTextNode(initials));
@@ -92,10 +99,10 @@
 
     /* Discard */
     profDiscardBtn.addEventListener('click', () => {
-        document.getElementById('profFieldName').value  = savedData.name;
+        document.getElementById('profFieldName').value = savedData.name;
         document.getElementById('profFieldPhone').value = savedData.phone;
         document.getElementById('profFieldEmail').value = savedData.email;
-        document.getElementById('profFieldAge').value   = savedData.age;
+        document.getElementById('profFieldAge').value = savedData.age;
         profSavedMsg.classList.remove('show');
         profEditPanel.classList.remove('open');
     });
