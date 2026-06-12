@@ -1,5 +1,9 @@
 /*-------------------- Body ----------------------- */
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
     font-family: var(--font-main);
     background: #f0f0f5;
     color: var(--text-primary);
