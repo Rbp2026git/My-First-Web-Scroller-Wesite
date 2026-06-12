@@ -28,7 +28,7 @@ body.dark .upperNav {
 .upperNav-left {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     flex-shrink: 0;
 }
 
@@ -60,7 +60,7 @@ body.dark .menu-btn svg { color: #f3f4f6; }
 
 /* ------Yahan se logo-name ko style kiya gaya hai-------*/
 .logo {
-    padding: 3px 16px;
+    padding: 3px 12px;
     border-radius: var(--radius-lg);
     text-decoration: none;
     border: 0.25px solid transparent;
