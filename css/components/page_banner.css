@@ -1,0 +1,52 @@
+/* ═══════ PAGE HERO  (Tutorials, Projects & Blog common styling) ════════ */
+.page-hero {
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero-tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 14px;
+}
+
+body.dark .page-hero-tag {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ccc;
+}
+
+.page-hero h1 {
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+}
+
+body.dark .page-hero h1 {
+    color: #f3f4f6;
+}
+
+.page-hero p {
+    font-size: 15px;
+    color: #555;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+body.dark .page-hero p {
+    color: #9ca3af;
+}

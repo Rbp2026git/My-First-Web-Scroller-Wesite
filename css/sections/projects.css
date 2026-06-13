@@ -1,0 +1,306 @@
+/* ═══════════════════════════════════════
+   PROJECTS SECTION
+═══════════════════════════════════════ */
+.projects-hero { background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 50%, #c7d2fe 100%); }
+body.dark .projects-hero { background: linear-gradient(135deg, #1e1a4a 0%, #151030 100%); }
+ 
+/* ── Toolbar: filter + starred toggle ── */
+.projects-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 28px 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+.projects-filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+ 
+.proj-filter-btn {
+    padding: 6px 16px;
+    border: 1.5px solid var(--border-light);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: all 0.18s ease;
+}
+ 
+.proj-filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+ 
+.proj-filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+}
+ 
+body.dark .proj-filter-btn {
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #9ca3af;
+}
+ 
+body.dark .proj-filter-btn.active {
+    background: var(--accent);
+    color: #fff;
+}
+ 
+/* ── Starred toggle button ── */
+.starred-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+    border: 1.5px solid var(--border-light);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: all 0.18s ease;
+}
+ 
+.starred-toggle-btn .star-icon {
+    font-size: 15px;
+    color: #d1d5db;
+    transition: color 0.18s;
+}
+ 
+.starred-toggle-btn:hover {
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+ 
+.starred-toggle-btn:hover .star-icon {
+    color: #f59e0b;
+}
+ 
+.starred-toggle-btn.active {
+    background: #fef3c7;
+    border-color: #f59e0b;
+    color: #92400e;
+}
+ 
+.starred-toggle-btn.active .star-icon {
+    color: #f59e0b;
+}
+ 
+body.dark .starred-toggle-btn {
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #9ca3af;
+}
+ 
+body.dark .starred-toggle-btn.active {
+    background: #292524;
+    border-color: #f59e0b;
+    color: #fbbf24;
+}
+ 
+/* ── Empty state ── */
+.proj-empty {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px 20px;
+    text-align: center;
+    gap: 12px;
+}
+ 
+.proj-empty.visible {
+    display: flex;
+}
+ 
+.proj-empty-icon {
+    font-size: 2.5rem;
+    opacity: 0.4;
+}
+ 
+.proj-empty p {
+    font-size: 14px;
+    color: var(--text-tertiary);
+}
+ 
+/* ── Grid ── */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    padding: 24px 40px 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+/* ── Project Card ── */
+.project-card {
+    background: var(--bg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 0.5px solid var(--border-light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+ 
+body.dark .project-card {
+    background: #1e1e2e;
+    border-color: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+ 
+/* ── Card thumbnail ── */
+.proj-thumb {
+    height: 150px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    overflow: hidden;
+}
+ 
+/* ── Star button on card ── */
+.proj-star-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background 0.18s, transform 0.18s;
+    color: #fff;
+    line-height: 1;
+}
+ 
+.proj-star-btn:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+ 
+.proj-star-btn.starred {
+    background: rgba(245, 158, 11, 0.85);
+}
+ 
+.proj-star-btn.starred:hover {
+    background: rgba(217, 119, 6, 0.9);
+}
+ 
+/* Star pop animation */
+@keyframes starPop {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.35); }
+    70% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+ 
+.proj-star-btn.pop {
+    animation: starPop 0.32s ease;
+}
+ 
+/* ── Card body ── */
+.proj-card-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+ 
+.proj-tech-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: fit-content;
+}
+ 
+.proj-tech-badge.html  { background: #fff7ed; color: #c2410c; }
+.proj-tech-badge.css   { background: #eff6ff; color: #1d4ed8; }
+.proj-tech-badge.js    { background: #fefce8; color: #a16207; }
+.proj-tech-badge.react { background: #f0f9ff; color: #0369a1; }
+ 
+body.dark .proj-tech-badge.html  { background: #431407; color: #fdba74; }
+body.dark .proj-tech-badge.css   { background: #172554; color: #93c5fd; }
+body.dark .proj-tech-badge.js    { background: #422006; color: #fcd34d; }
+body.dark .proj-tech-badge.react { background: #0c4a6e; color: #7dd3fc; }
+ 
+.proj-card-body h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin: 0;
+}
+ 
+body.dark .proj-card-body h3 {
+    color: #f3f4f6;
+}
+ 
+.proj-card-body p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+}
+ 
+.proj-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 8px;
+}
+ 
+.proj-difficulty {
+    font-size: 11px;
+    color: var(--text-tertiary);
+    font-weight: 500;
+}
+ 
+.proj-open-btn {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: var(--font-main);
+    transition: letter-spacing 0.18s;
+}
+ 
+.proj-open-btn:hover {
+    letter-spacing: 0.2px;
+}
+ 
+ 

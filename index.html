@@ -32,12 +32,16 @@
     <link rel="stylesheet" href="css\components\slider.css">
     <!--CONTACTS-->
     <link rel="stylesheet" href="css\sections\contact.css">
+    <!-- Page Banner -->
+    <link rel="stylesheet" href="css\components\page_banner.css">
     <!--BLOG-->
     <link rel="stylesheet" href="css\sections\blog.css">
     <!--EVENTS-->
     <link rel="stylesheet" href="css\sections\events.css">
     <!--TUTORIALS-->
     <link rel="stylesheet" href="css\sections\tutorials.css">
+    <!--PROJECTS -->
+    <link rel="stylesheet" href="css\sections\projects.css">
     <!-- MOBILE RESPONSIVE -->
     <link rel="stylesheet" href="css\responsive\mobile.css">
     <!-- TABLET RESPONSIVE -->
@@ -259,10 +263,10 @@
                 <button id="coursesBtn" class="nav-item" data-section="courses">Courses</button>
                 <button id="notesBtn" class="nav-item" data-section="notes">Notes</button>
                 <button id="tutorialsBtn" class="nav-item" data-section="tutorials">Tutorials</button>
+                <button id="projectsBtn" class="nav-item" data-section="projects">Projects</button>
                 <button id="blogBtn" class="nav-item" data-section="blog">Blog</button>
                 <button id="events" class="nav-item" data-section="events">Events</button>
                 <button id="contactBtn" class="nav-item" data-section="contact">Contact</button>
-                <button id="projectsBtn" class="nav-item" data-section="projects">Projects</button>
             </div>
         </div>
     </header>
@@ -643,6 +647,52 @@
         </section>
         <!--============================ Tutorial Section = End testing : 01 ============================ -->
 
+         <!--============================ Projects Section = Stert  ============================ -->
+        <section id="section-projects" class="page-section">
+            <!-- ═══════════ Projects VIEW ═══════════ -->
+            <div id="view-projects" class="page-view">
+                <!-- Hero -->
+                <section class="page-hero projects-hero">
+                    <div class="page-hero-content">
+                        <span class="page-hero-tag">🛠️ Projects</span>
+                        <h1>Practice Projects</h1>
+                        <p> Create Real projects — Also star your favourate HTML, CSS, JavaScript & React projects.</p>
+                    </div>
+                </section>
+
+                <section class="project-section">
+                    <!-- Toolbar -->
+                    <div class="projects-toolbar">
+                        <div class="projects-filters">
+                            <button class="proj-filter-btn active" data-filter="all">All</button>
+                            <button class="proj-filter-btn" data-filter="html">HTML</button>
+                            <button class="proj-filter-btn" data-filter="css">CSS</button>
+                            <button class="proj-filter-btn" data-filter="js">JavaScript</button>
+                            <button class="proj-filter-btn" data-filter="react">React</button>
+                        </div>
+                        <button class="starred-toggle-btn" id="starredToggleBtn" aria-pressed="false">
+                            <span class="star-icon">☆</span>
+                            Starred
+                            <span id="starCount" style=" display:none; background:#f59e0b; color:#fff; font-size:10px; font-weight:700;
+                                padding:1px 6px; border-radius:10px; min-width:18px; text-align:center;"></span>
+                        </button>
+                    </div>
+ 
+                    <!-- Empty state -->
+                    <div class="proj-empty" id="projEmpty">
+                        <div class="proj-empty-icon">☆</div>
+                        <p>Koi starred project nahi hai abhi.<br>Cards pe ☆ click karo apne favorites save karne ke liye.</p>
+                    </div>
+ 
+                    <!-- Grid — JS se dynamically render hoga -->
+                    <div class="projects-grid" id="projectsGrid"></div>
+                    <!-- /projects-grid -->
+                </section>
+            </div>
+ 
+        </section>
+        <!-- ═══════════ PROJECTS END ═══════════ -->
+
         <!--============================ Blog Section = Stert testing : 01 ============================ -->
         <section id="section-blog" class="page-section">
             <!-- ═══════════ BLOG VIEW ═══════════ -->
@@ -881,6 +931,8 @@
     <script src="js\slider.js"></script>
     <!-- Profile POPUP -->
     <script src="js\profile_popup.js"></script>
+    <!-- Projects Cards -->
+    <script src="js\projects_cards.js"></script>
 </body>
 
 </html>

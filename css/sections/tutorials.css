@@ -1,4 +1,7 @@
 /* ════════════════════════TUTORIALS SECTION ═══════════════════════ */
+.tutorials-hero { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 40%, #93c5fd 100%); }
+body.dark .tutorials-hero { background: linear-gradient(135deg, #1e3a5f 0%, #172554 100%); }
+
 .tutorials-section {
     padding: 40px 40px 60px;
     max-width: 1200px;
