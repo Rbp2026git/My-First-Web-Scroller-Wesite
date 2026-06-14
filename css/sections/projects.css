@@ -6,20 +6,15 @@ body.dark .projects-hero { background: linear-gradient(135deg, #1e1a4a 0%, #1510
  
 /* ── Toolbar: filter + starred toggle ── */
 .projects-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 28px 40px 0;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 28px 40px 0;
 }
- 
 .projects-filters {
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    align-items: center;
 }
  
 .proj-filter-btn {
@@ -58,6 +53,7 @@ body.dark .proj-filter-btn.active {
  
 /* ── Starred toggle button ── */
 .starred-toggle-btn {
+    margin-left: auto;
     display: flex;
     align-items: center;
     gap: 6px;
