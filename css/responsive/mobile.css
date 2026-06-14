@@ -90,11 +90,14 @@
     .foot-container { grid-template-columns: 1fr 1fr; }
     .blog-grid, .tutorials-grid, .projects-grid { grid-template-columns: 1fr; }
     .blog-section, .tutorials-section { padding: 24px 16px 40px; }
-    .projects-toolbar { padding: 20px 16px 0;}
+    /* ------- Responsive of Projects Section  ----- */
+    .projects-toolbar { padding: 20px 16px 0; }
+    .starred-toggle-btn { margin-left: 0; }
     /* ------- ispe ek bar aur dhayan dena hai  */
     .projects-grid {
         padding: 20px 16px 40px;
     }
+    /* ------- Responsive of Projects Section ends HERE ----- */
 }
 /* ----- Media Quarry for Slider in the hero section of HOME ------*/
 @media (max-width: 768px) {

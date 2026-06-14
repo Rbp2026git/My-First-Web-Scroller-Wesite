@@ -12,7 +12,7 @@ body.dark .projects-hero { background: linear-gradient(135deg, #1e1a4a 0%, #1510
 }
 .projects-filters {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
     align-items: center;
 }
